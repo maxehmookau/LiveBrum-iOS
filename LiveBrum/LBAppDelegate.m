@@ -1,5 +1,5 @@
 #import "LBAppDelegate.h"
-#import "LBEventCollection.h"
+#import "LBTodayViewController.h"
 
 @implementation LBAppDelegate
 
@@ -11,12 +11,19 @@
     
     // Override point for customization after application launch.
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:nil];
+    LBTodayViewController *todayVC = [[LBTodayViewController alloc] init];
+    
+    todayVC.tabBarItem = [[UITabBarItem alloc]
+                                     initWithTitle:@"Today"
+                                     image:[UIImage imageNamed:@"65-note.png"]
+                                     tag:0];
+    
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:todayVC, nil]];
     
     
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
-    [[LBEventCollection alloc] withTodaysEvents];
+    
     return YES;
 }
 

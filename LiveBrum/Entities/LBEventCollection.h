@@ -3,7 +3,7 @@
 //  LiveBrum
 //
 //  Created by Max Woolf on 29/05/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 MaxWoolf. All rights reserved.
 //  Used to generate a collection of LBEvents using one of a number of searches (Date, venue etc...)
 //
 

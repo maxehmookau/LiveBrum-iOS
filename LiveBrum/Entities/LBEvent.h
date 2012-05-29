@@ -12,7 +12,7 @@
 {
     NSDictionary *rootDictionary;
     NSString *name;
-    NSURL *source;
+    NSString *dateRange;
     UIImage *image;
     NSString *description;
     LBVenue *venue;
@@ -30,7 +30,7 @@
 -(void)parseReceivedData;
 
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSURL *source;
+@property (nonatomic) NSString *dateRange;
 @property (nonatomic) NSString *description;
 @property (nonatomic) UIImage *image;
 @property (nonatomic) LBVenue *venue;

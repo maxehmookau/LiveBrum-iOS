@@ -61,8 +61,7 @@
     for (int x = 0; x < [self numberOfEventsInCollection]; x++)
     {
         NSDictionary *currentEvent = [[root objectForKey:@"performances"] objectAtIndex:x];
-        //[events addObject:[[LBEvent alloc] initWithLiveBrumURL:[currentEvent valueForKey:@"url"]]];
-        NSLog(@"%@.json", [currentEvent valueForKey:@"url"]);
+        [events addObject:[[LBEvent alloc] initWithLiveBrumURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.json", [currentEvent valueForKey:@"url"]]]]];
     }
     
     //Let the delegate know we're done here.

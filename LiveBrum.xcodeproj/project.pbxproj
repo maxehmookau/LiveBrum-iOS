@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501C04E11575525100609760 /* 65-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 501C04DF1575525100609760 /* 65-note.png */; };
+		501C04E21575525100609760 /* 65-note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 501C04E01575525100609760 /* 65-note@2x.png */; };
 		504E401E157519CE0049177A /* NSObject+SBJson.h in Sources */ = {isa = PBXBuildFile; fileRef = 50B231D81575179500B8081F /* NSObject+SBJson.h */; };
 		504E401F157519CE0049177A /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231D91575179500B8081F /* NSObject+SBJson.m */; };
 		504E4020157519CE0049177A /* SBJson.h in Sources */ = {isa = PBXBuildFile; fileRef = 50B231DA1575179500B8081F /* SBJson.h */; };
@@ -32,6 +34,8 @@
 		504E4034157519CE0049177A /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231EE1575179500B8081F /* SBJsonUTF8Stream.m */; };
 		504E4035157519CE0049177A /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 50B231EF1575179500B8081F /* SBJsonWriter.h */; };
 		504E4036157519CE0049177A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231F01575179500B8081F /* SBJsonWriter.m */; };
+		504E403C15754FEE0049177A /* LBTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504E403A15754FEE0049177A /* LBTodayViewController.m */; };
+		504E403D15754FEE0049177A /* LBTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504E403B15754FEE0049177A /* LBTodayViewController.xib */; };
 		50B231B715750DAE00B8081F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B615750DAE00B8081F /* UIKit.framework */; };
 		50B231B915750DAE00B8081F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B815750DAE00B8081F /* Foundation.framework */; };
 		50B231BB15750DAE00B8081F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231BA15750DAE00B8081F /* CoreGraphics.framework */; };
@@ -44,6 +48,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		501C04DF1575525100609760 /* 65-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "65-note.png"; path = "Images/65-note.png"; sourceTree = "<group>"; };
+		501C04E01575525100609760 /* 65-note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "65-note@2x.png"; path = "Images/65-note@2x.png"; sourceTree = "<group>"; };
+		504E403915754FEE0049177A /* LBTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBTodayViewController.h; path = "LiveBrum/View Controllers/LBTodayViewController.h"; sourceTree = "<group>"; };
+		504E403A15754FEE0049177A /* LBTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBTodayViewController.m; path = "LiveBrum/View Controllers/LBTodayViewController.m"; sourceTree = "<group>"; };
+		504E403B15754FEE0049177A /* LBTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBTodayViewController.xib; path = "LiveBrum/View Controllers/LBTodayViewController.xib"; sourceTree = "<group>"; };
 		50B231B215750DAE00B8081F /* LiveBrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveBrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B231B615750DAE00B8081F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B231B815750DAE00B8081F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,10 +110,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		501C04DE1575522400609760 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				501C04DF1575525100609760 /* 65-note.png */,
+				501C04E01575525100609760 /* 65-note@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		504E403815754FC90049177A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				504E403915754FEE0049177A /* LBTodayViewController.h */,
+				504E403A15754FEE0049177A /* LBTodayViewController.m */,
+				504E403B15754FEE0049177A /* LBTodayViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		50B231A715750DAD00B8081F = {
 			isa = PBXGroup;
 			children = (
 				50B231D71575178700B8081F /* SBJSON */,
+				501C04DE1575522400609760 /* Images */,
+				504E403815754FC90049177A /* View Controllers */,
 				50B231CD15750EF500B8081F /* Entities */,
 				50B231BC15750DAE00B8081F /* LiveBrum */,
 				50B231B515750DAE00B8081F /* Frameworks */,
@@ -248,6 +278,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B231C115750DAE00B8081F /* InfoPlist.strings in Resources */,
+				504E403D15754FEE0049177A /* LBTodayViewController.xib in Resources */,
+				501C04E11575525100609760 /* 65-note.png in Resources */,
+				501C04E21575525100609760 /* 65-note@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +321,7 @@
 				50B231D015750F2A00B8081F /* LBEvent.m in Sources */,
 				50B231D315750F5200B8081F /* LBVenue.m in Sources */,
 				50B231D61575110C00B8081F /* LBEventCollection.m in Sources */,
+				504E403C15754FEE0049177A /* LBTodayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
