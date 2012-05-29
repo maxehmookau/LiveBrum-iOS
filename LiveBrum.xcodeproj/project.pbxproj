@@ -15,6 +15,7 @@
 		50B231C715750DAE00B8081F /* LBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231C615750DAE00B8081F /* LBAppDelegate.m */; };
 		50B231D015750F2A00B8081F /* LBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231CF15750F2A00B8081F /* LBEvent.m */; };
 		50B231D315750F5200B8081F /* LBVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231D215750F5200B8081F /* LBVenue.m */; };
+		50B231D61575110C00B8081F /* LBEventCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231D51575110C00B8081F /* LBEventCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		50B231CF15750F2A00B8081F /* LBEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBEvent.m; path = LiveBrum/Entities/LBEvent.m; sourceTree = "<group>"; };
 		50B231D115750F5200B8081F /* LBVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBVenue.h; path = LiveBrum/Entities/LBVenue.h; sourceTree = "<group>"; };
 		50B231D215750F5200B8081F /* LBVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBVenue.m; path = LiveBrum/Entities/LBVenue.m; sourceTree = "<group>"; };
+		50B231D41575110C00B8081F /* LBEventCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBEventCollection.h; path = LiveBrum/Entities/LBEventCollection.h; sourceTree = "<group>"; };
+		50B231D51575110C00B8081F /* LBEventCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBEventCollection.m; path = LiveBrum/Entities/LBEventCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				50B231CF15750F2A00B8081F /* LBEvent.m */,
 				50B231D115750F5200B8081F /* LBVenue.h */,
 				50B231D215750F5200B8081F /* LBVenue.m */,
+				50B231D41575110C00B8081F /* LBEventCollection.h */,
+				50B231D51575110C00B8081F /* LBEventCollection.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				50B231C715750DAE00B8081F /* LBAppDelegate.m in Sources */,
 				50B231D015750F2A00B8081F /* LBEvent.m in Sources */,
 				50B231D315750F5200B8081F /* LBVenue.m in Sources */,
+				50B231D61575110C00B8081F /* LBEventCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
