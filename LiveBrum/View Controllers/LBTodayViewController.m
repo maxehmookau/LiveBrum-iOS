@@ -39,6 +39,7 @@
                 reuseIdentifier:CellIdentifier];
     }
     
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     cell.textLabel.text = [[[todayCollection events]objectAtIndex:indexPath.row]name];
     return cell;
 } 
@@ -71,6 +72,8 @@
 
 -(void)viewWillAppear:(BOOL)animated    
 {
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0 alpha:1]];
+    [self setTitle:@"Today"];
     todayCollection = [[LBEventCollection alloc] withTodaysEvents];
     [todayCollection setDelegate:self];
 }

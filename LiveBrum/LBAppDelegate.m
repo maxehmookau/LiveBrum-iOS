@@ -12,13 +12,14 @@
     // Override point for customization after application launch.
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     LBTodayViewController *todayVC = [[LBTodayViewController alloc] init];
+    UINavigationController *todayNC = [[UINavigationController alloc] initWithRootViewController:todayVC];
     
-    todayVC.tabBarItem = [[UITabBarItem alloc]
+    todayNC.tabBarItem = [[UITabBarItem alloc]
                                      initWithTitle:@"Today"
                                      image:[UIImage imageNamed:@"65-note.png"]
                                      tag:0];
     
-    [tabBarController setViewControllers:[NSArray arrayWithObjects:todayVC, nil]];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:todayNC, nil]];
     
     
     self.window.rootViewController = tabBarController;

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LiveBrum/View Controllers/LBTodayViewController.m"
-         timestampString = "360016110.809322"
+         timestampString = "360016213.296385"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-dataDidFinishLoading"
          landmarkType = "5">
       </FileBreakpoint>
