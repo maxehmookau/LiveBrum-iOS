@@ -16,7 +16,7 @@
     
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
-    [[LBEventCollection alloc] initWithDate:@"23" month:@"04" year:@"2011"];
+    [[LBEventCollection alloc] withTodaysEvents];
     return YES;
 }
 
