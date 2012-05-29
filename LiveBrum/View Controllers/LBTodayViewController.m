@@ -15,10 +15,43 @@
 @implementation LBTodayViewController
 @synthesize todayCollection;
 
+#pragma mark - Table View Delegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [todayCollection numberOfEventsInCollection];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView 
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView 
+                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [[[todayCollection events]objectAtIndex:indexPath.row]name];
+    return cell;
+} 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Initialisation
 -(void)dataDidFinishLoading
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Done" message:@"Got lots of data" delegate:nil cancelButtonTitle:@"Yay" otherButtonTitles:nil];
-    [alert show];
+    [table reloadData];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,10 +65,14 @@
 
 - (void)viewDidLoad
 {
-    todayCollection = [[LBEventCollection alloc] withTodaysEvents];
-    [todayCollection setDelegate:self];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated    
+{
+    todayCollection = [[LBEventCollection alloc] withTodaysEvents];
+    [todayCollection setDelegate:self];
 }
 
 - (void)viewDidUnload

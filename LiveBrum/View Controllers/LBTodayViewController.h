@@ -12,6 +12,7 @@
 @interface LBTodayViewController : UIViewController <LBEventCollectionDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     LBEventCollection *todayCollection;
+    IBOutlet UITableView *table;
 }
 
 @property (nonatomic) LBEventCollection *todayCollection;

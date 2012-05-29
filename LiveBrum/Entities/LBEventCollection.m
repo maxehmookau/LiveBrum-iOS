@@ -58,13 +58,23 @@
 
 -(void)convertToEvents
 {
+    completedEvents = 0;
+    events = [[NSMutableArray alloc] initWithCapacity:[self numberOfEventsInCollection]];
     for (int x = 0; x < [self numberOfEventsInCollection]; x++)
     {
         NSDictionary *currentEvent = [[root objectForKey:@"performances"] objectAtIndex:x];
-        [events addObject:[[LBEvent alloc] initWithLiveBrumURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.json", [currentEvent valueForKey:@"url"]]]]];
+        LBEvent *newEvent = [[LBEvent alloc] initWithLiveBrumURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.json", [currentEvent valueForKey:@"url"]]]];
+        [newEvent setDelegate:self];
+        [events addObject:newEvent];
+    }    
+}
+
+-(void)eventDidFinishLoading
+{
+    completedEvents = completedEvents + 1;
+    if(completedEvents >= [self numberOfEventsInCollection])
+    {
+        [delegate dataDidFinishLoading];
     }
-    
-    //Let the delegate know we're done here.
-    [delegate dataDidFinishLoading];
 }
 @end

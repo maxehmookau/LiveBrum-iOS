@@ -2,7 +2,7 @@
 #import "SBJson.h"
 
 @implementation LBEvent
-@synthesize name, description, image, venue, delegate, dateRange;
+@synthesize name, desc, image, venue, delegate, dateRange;
 
 
 #pragma mark - Initialisers
@@ -37,7 +37,7 @@
 {
     rootDictionary = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] JSONValue];
     name = [rootDictionary valueForKey:@"title"];
-    description = [rootDictionary valueForKey:@"description"];
+    desc = [rootDictionary valueForKey:@"description"];
     dateRange = [rootDictionary valueForKey:@"date_range"];
     
     //Alert the delegate when we're done, if there is a delegate.

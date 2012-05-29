@@ -17,12 +17,13 @@
 
 @end
 
-@interface LBEventCollection : NSObject <NSURLConnectionDataDelegate>
+@interface LBEventCollection : NSObject <NSURLConnectionDataDelegate, LBEventProtocol>
 {
     NSMutableArray *events;
     NSMutableData *receivedData;
     NSDictionary *root;
     id <LBEventCollectionDelegate> delegate;
+    int completedEvents;
 }
 
 -(id)initWithDate:(NSString *)aDate month:(NSString *)aMonth year:(NSString *)aYear;
@@ -31,6 +32,6 @@
 -(void)convertToEvents;
 
 
-@property (nonatomic) NSArray *events;
+@property (nonatomic) NSMutableArray *events;
 @property(nonatomic) id delegate;
 @end

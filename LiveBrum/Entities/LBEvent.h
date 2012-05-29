@@ -14,7 +14,7 @@
     NSString *name;
     NSString *dateRange;
     UIImage *image;
-    NSString *description;
+    NSString *desc;
     LBVenue *venue;
     id <LBEventProtocol> delegate;
     
@@ -31,7 +31,7 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *dateRange;
-@property (nonatomic) NSString *description;
+@property (nonatomic) NSString *desc;
 @property (nonatomic) UIImage *image;
 @property (nonatomic) LBVenue *venue;
 @property (nonatomic) id delegate;

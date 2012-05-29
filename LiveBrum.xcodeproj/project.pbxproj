@@ -387,11 +387,13 @@
 		50B231CB15750DAE00B8081F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Max Woolf (35C7AH5D5T)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LiveBrum/LiveBrum-Prefix.pch";
 				INFOPLIST_FILE = "LiveBrum/LiveBrum-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C74010A3-E046-4067-B1C2-1C085A7C2A1B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -399,11 +401,13 @@
 		50B231CC15750DAE00B8081F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Max Woolf (35C7AH5D5T)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LiveBrum/LiveBrum-Prefix.pch";
 				INFOPLIST_FILE = "LiveBrum/LiveBrum-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C74010A3-E046-4067-B1C2-1C085A7C2A1B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
