@@ -24,8 +24,8 @@
     id <LBEventCollectionDelegate> delegate;
 }
 
--(id)initWithDate:(NSInteger *)aDate month:(NSInteger *)aMonth year:(NSInteger *)aYear;
+-(id)initWithDate:(NSString *)aDate month:(NSString *)aMonth year:(NSString *)aYear;
 
 @property (nonatomic) NSArray *events;
-@property(nonatomic,assign) id delegate;
+@property(nonatomic) id delegate;
 @end

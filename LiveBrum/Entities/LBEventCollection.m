@@ -1,9 +1,10 @@
 #import "LBEventCollection.h"
+#import "SBJson.h"
 
 @implementation LBEventCollection
-@synthesize events;
+@synthesize events, delegate;
 
--(id)initWithDate:(NSInteger *)aDate month:(NSInteger *)aMonth year:(NSInteger *)aYear
+-(id)initWithDate:(NSString *)aDate month:(NSString *)aMonth year:(NSString *)aYear
 {
     //Permalink in this format http://livebrum.co.uk/YYYY/MM/DD.json
     //Go get that data.
@@ -29,7 +30,11 @@
 //Called once the JSON has finished downloading. 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    NSDictionary *root = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     //Now parse all this data and convert it to LBEvent objects.
+    NSLog(@"%@", [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding]);
 }
+
+#pragma mark - Parse and Convert Data
 
 @end

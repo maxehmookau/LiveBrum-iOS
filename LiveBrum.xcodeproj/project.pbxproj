@@ -35,6 +35,31 @@
 		50B231D215750F5200B8081F /* LBVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBVenue.m; path = LiveBrum/Entities/LBVenue.m; sourceTree = "<group>"; };
 		50B231D41575110C00B8081F /* LBEventCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBEventCollection.h; path = LiveBrum/Entities/LBEventCollection.h; sourceTree = "<group>"; };
 		50B231D51575110C00B8081F /* LBEventCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBEventCollection.m; path = LiveBrum/Entities/LBEventCollection.m; sourceTree = "<group>"; };
+		50B231D81575179500B8081F /* NSObject+SBJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		50B231D91575179500B8081F /* NSObject+SBJson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		50B231DA1575179500B8081F /* SBJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		50B231DB1575179500B8081F /* SBJsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		50B231DC1575179500B8081F /* SBJsonParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		50B231DD1575179500B8081F /* SBJsonStreamParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		50B231DE1575179500B8081F /* SBJsonStreamParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		50B231DF1575179500B8081F /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		50B231E01575179500B8081F /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		50B231E11575179500B8081F /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		50B231E21575179500B8081F /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		50B231E31575179500B8081F /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		50B231E41575179500B8081F /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		50B231E51575179500B8081F /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		50B231E61575179500B8081F /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		50B231E71575179500B8081F /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		50B231E81575179500B8081F /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		50B231E91575179500B8081F /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		50B231EA1575179500B8081F /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		50B231EB1575179500B8081F /* SBJsonTokeniser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		50B231EC1575179500B8081F /* SBJsonTokeniser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		50B231ED1575179500B8081F /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		50B231EE1575179500B8081F /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		50B231EF1575179500B8081F /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		50B231F01575179500B8081F /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +79,7 @@
 		50B231A715750DAD00B8081F = {
 			isa = PBXGroup;
 			children = (
+				50B231D71575178700B8081F /* SBJSON */,
 				50B231CD15750EF500B8081F /* Entities */,
 				50B231BC15750DAE00B8081F /* LiveBrum */,
 				50B231B515750DAE00B8081F /* Frameworks */,
@@ -111,6 +137,38 @@
 				50B231D51575110C00B8081F /* LBEventCollection.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		50B231D71575178700B8081F /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				50B231D81575179500B8081F /* NSObject+SBJson.h */,
+				50B231D91575179500B8081F /* NSObject+SBJson.m */,
+				50B231DA1575179500B8081F /* SBJson.h */,
+				50B231DB1575179500B8081F /* SBJsonParser.h */,
+				50B231DC1575179500B8081F /* SBJsonParser.m */,
+				50B231DD1575179500B8081F /* SBJsonStreamParser.h */,
+				50B231DE1575179500B8081F /* SBJsonStreamParser.m */,
+				50B231DF1575179500B8081F /* SBJsonStreamParserAccumulator.h */,
+				50B231E01575179500B8081F /* SBJsonStreamParserAccumulator.m */,
+				50B231E11575179500B8081F /* SBJsonStreamParserAdapter.h */,
+				50B231E21575179500B8081F /* SBJsonStreamParserAdapter.m */,
+				50B231E31575179500B8081F /* SBJsonStreamParserState.h */,
+				50B231E41575179500B8081F /* SBJsonStreamParserState.m */,
+				50B231E51575179500B8081F /* SBJsonStreamWriter.h */,
+				50B231E61575179500B8081F /* SBJsonStreamWriter.m */,
+				50B231E71575179500B8081F /* SBJsonStreamWriterAccumulator.h */,
+				50B231E81575179500B8081F /* SBJsonStreamWriterAccumulator.m */,
+				50B231E91575179500B8081F /* SBJsonStreamWriterState.h */,
+				50B231EA1575179500B8081F /* SBJsonStreamWriterState.m */,
+				50B231EB1575179500B8081F /* SBJsonTokeniser.h */,
+				50B231EC1575179500B8081F /* SBJsonTokeniser.m */,
+				50B231ED1575179500B8081F /* SBJsonUTF8Stream.h */,
+				50B231EE1575179500B8081F /* SBJsonUTF8Stream.m */,
+				50B231EF1575179500B8081F /* SBJsonWriter.h */,
+				50B231F01575179500B8081F /* SBJsonWriter.m */,
+			);
+			name = SBJSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
