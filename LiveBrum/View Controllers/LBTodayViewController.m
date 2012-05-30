@@ -8,6 +8,7 @@
 
 #import "LBTodayViewController.h"
 #import "LBGenreColours.h"
+#import "LBVenueBadge.h"
 
 @interface LBTodayViewController ()
 
@@ -34,7 +35,7 @@
 //    }else{
 //        [cell setBackgroundColor:[UIColor lightGrayColor]];
 //    }
-    [cell setBackgroundColor:[LBGenreColours colorForGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre]]];
+    //[cell setBackgroundColor:[LBGenreColours colorForGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre]]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView 
@@ -50,15 +51,34 @@
                 reuseIdentifier:CellIdentifier];
     }
     
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 40)];
+    [headerLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]name]];
+    [headerLabel setFont:[UIFont boldSystemFontOfSize:22]];
+    
+    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 45, 300, 40)];
+    [venueLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]venue]];
+    [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
+
+    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(190, 60, 100, 20)];
+    
+    [containerView addSubview:headerLabel];
+    [containerView addSubview:venueLabel];
+    [containerView addSubview:venueBadge];
+    cell.backgroundView = containerView;
     
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    cell.textLabel.text = [[[todayCollection events]objectAtIndex:indexPath.row]name];
     return cell;
 } 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 
 #pragma mark - Initialisation
@@ -84,6 +104,7 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }

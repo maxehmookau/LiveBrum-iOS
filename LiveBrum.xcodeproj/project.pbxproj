@@ -37,6 +37,8 @@
 		504E403C15754FEE0049177A /* LBTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504E403A15754FEE0049177A /* LBTodayViewController.m */; };
 		504E403D15754FEE0049177A /* LBTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504E403B15754FEE0049177A /* LBTodayViewController.xib */; };
 		50A1E0571576314F00772484 /* LBGenreColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E0561576314F00772484 /* LBGenreColours.m */; };
+		50A1E05B157643ED00772484 /* LBVenueBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E05A157643ED00772484 /* LBVenueBadge.m */; };
+		50A1E05D1576472E00772484 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E05C1576472E00772484 /* QuartzCore.framework */; };
 		50B231B715750DAE00B8081F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B615750DAE00B8081F /* UIKit.framework */; };
 		50B231B915750DAE00B8081F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B815750DAE00B8081F /* Foundation.framework */; };
 		50B231BB15750DAE00B8081F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231BA15750DAE00B8081F /* CoreGraphics.framework */; };
@@ -56,6 +58,9 @@
 		504E403B15754FEE0049177A /* LBTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBTodayViewController.xib; path = "LiveBrum/View Controllers/LBTodayViewController.xib"; sourceTree = "<group>"; };
 		50A1E0551576314F00772484 /* LBGenreColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGenreColours.h; path = LiveBrum/Helpers/LBGenreColours.h; sourceTree = "<group>"; };
 		50A1E0561576314F00772484 /* LBGenreColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGenreColours.m; path = LiveBrum/Helpers/LBGenreColours.m; sourceTree = "<group>"; };
+		50A1E059157643ED00772484 /* LBVenueBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBVenueBadge.h; path = LiveBrum/Helpers/LBVenueBadge.h; sourceTree = "<group>"; };
+		50A1E05A157643ED00772484 /* LBVenueBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBVenueBadge.m; path = LiveBrum/Helpers/LBVenueBadge.m; sourceTree = "<group>"; };
+		50A1E05C1576472E00772484 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		50B231B215750DAE00B8081F /* LiveBrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveBrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B231B615750DAE00B8081F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B231B815750DAE00B8081F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A1E05D1576472E00772484 /* QuartzCore.framework in Frameworks */,
 				50B231B715750DAE00B8081F /* UIKit.framework in Frameworks */,
 				50B231B915750DAE00B8081F /* Foundation.framework in Frameworks */,
 				50B231BB15750DAE00B8081F /* CoreGraphics.framework in Frameworks */,
@@ -137,6 +143,8 @@
 			children = (
 				50A1E0551576314F00772484 /* LBGenreColours.h */,
 				50A1E0561576314F00772484 /* LBGenreColours.m */,
+				50A1E059157643ED00772484 /* LBVenueBadge.h */,
+				50A1E05A157643ED00772484 /* LBVenueBadge.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 		50B231B515750DAE00B8081F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50A1E05C1576472E00772484 /* QuartzCore.framework */,
 				50B231B615750DAE00B8081F /* UIKit.framework */,
 				50B231B815750DAE00B8081F /* Foundation.framework */,
 				50B231BA15750DAE00B8081F /* CoreGraphics.framework */,
@@ -336,6 +345,7 @@
 				50B231D61575110C00B8081F /* LBEventCollection.m in Sources */,
 				504E403C15754FEE0049177A /* LBTodayViewController.m in Sources */,
 				50A1E0571576314F00772484 /* LBGenreColours.m in Sources */,
+				50A1E05B157643ED00772484 /* LBVenueBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

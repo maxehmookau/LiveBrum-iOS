@@ -40,6 +40,7 @@
     desc = [rootDictionary valueForKey:@"description"];
     dateRange = [rootDictionary valueForKey:@"date_range"];
     genre = [[rootDictionary objectForKey:@"genre"] valueForKey:@"title"];
+    venue = [[rootDictionary objectForKey:@"venue"] valueForKey:@"title"];
     
     //Alert the delegate when we're done, if there is a delegate.
     [delegate eventDidFinishLoading];
