@@ -25,6 +25,15 @@
 {
     return [todayCollection numberOfEventsInCollection];
 }
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if(indexPath.row % 2 == 1)
+    {
+        [cell setBackgroundColor:[UIColor grayColor]];
+    }else{
+        [cell setBackgroundColor:[UIColor lightGrayColor]];
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView 
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -38,6 +47,7 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
+    
     
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     cell.textLabel.text = [[[todayCollection events]objectAtIndex:indexPath.row]name];

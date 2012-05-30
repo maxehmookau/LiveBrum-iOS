@@ -36,6 +36,7 @@
 		504E4036157519CE0049177A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231F01575179500B8081F /* SBJsonWriter.m */; };
 		504E403C15754FEE0049177A /* LBTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504E403A15754FEE0049177A /* LBTodayViewController.m */; };
 		504E403D15754FEE0049177A /* LBTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504E403B15754FEE0049177A /* LBTodayViewController.xib */; };
+		50A1E0571576314F00772484 /* LBGenreColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E0561576314F00772484 /* LBGenreColours.m */; };
 		50B231B715750DAE00B8081F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B615750DAE00B8081F /* UIKit.framework */; };
 		50B231B915750DAE00B8081F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B815750DAE00B8081F /* Foundation.framework */; };
 		50B231BB15750DAE00B8081F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231BA15750DAE00B8081F /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 		504E403915754FEE0049177A /* LBTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBTodayViewController.h; path = "LiveBrum/View Controllers/LBTodayViewController.h"; sourceTree = "<group>"; };
 		504E403A15754FEE0049177A /* LBTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBTodayViewController.m; path = "LiveBrum/View Controllers/LBTodayViewController.m"; sourceTree = "<group>"; };
 		504E403B15754FEE0049177A /* LBTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBTodayViewController.xib; path = "LiveBrum/View Controllers/LBTodayViewController.xib"; sourceTree = "<group>"; };
+		50A1E0551576314F00772484 /* LBGenreColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGenreColours.h; path = LiveBrum/Helpers/LBGenreColours.h; sourceTree = "<group>"; };
+		50A1E0561576314F00772484 /* LBGenreColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGenreColours.m; path = LiveBrum/Helpers/LBGenreColours.m; sourceTree = "<group>"; };
 		50B231B215750DAE00B8081F /* LiveBrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveBrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B231B615750DAE00B8081F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B231B815750DAE00B8081F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,9 +132,19 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		50A1E0581576315200772484 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				50A1E0551576314F00772484 /* LBGenreColours.h */,
+				50A1E0561576314F00772484 /* LBGenreColours.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		50B231A715750DAD00B8081F = {
 			isa = PBXGroup;
 			children = (
+				50A1E0581576315200772484 /* Helpers */,
 				50B231D71575178700B8081F /* SBJSON */,
 				501C04DE1575522400609760 /* Images */,
 				504E403815754FC90049177A /* View Controllers */,
@@ -322,6 +335,7 @@
 				50B231D315750F5200B8081F /* LBVenue.m in Sources */,
 				50B231D61575110C00B8081F /* LBEventCollection.m in Sources */,
 				504E403C15754FEE0049177A /* LBTodayViewController.m in Sources */,
+				50A1E0571576314F00772484 /* LBGenreColours.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
