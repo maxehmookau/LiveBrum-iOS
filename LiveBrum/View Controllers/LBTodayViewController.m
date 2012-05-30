@@ -50,7 +50,6 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
-    
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 40)];
     [headerLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]name]];
@@ -67,15 +66,24 @@
     UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
     [distanceLabel setFont:[UIFont systemFontOfSize:12]];
     NSString *distanceString = [[[[todayCollection events]objectAtIndex:indexPath.row]venue]distanceString]; 
-    [distanceLabel setText:distanceString];    
+    [distanceLabel setText:distanceString];  
+    
     [containerView addSubview:pinImage];
+    [distanceLabel setBackgroundColor:[UIColor clearColor]];
     [containerView addSubview:distanceLabel];
-   
-
+    
+    [headerLabel setBackgroundColor:[UIColor clearColor]];
     [containerView addSubview:headerLabel];
+    [venueLabel setBackgroundColor:[UIColor clearColor]];
     [containerView addSubview:venueLabel];
 
     [containerView addSubview:venueBadge];
+    if(indexPath.row % 2 == 0)
+    {
+        [containerView setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.05]];
+    }else{
+        [containerView setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.02]];
+    }
     cell.backgroundView = containerView;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;

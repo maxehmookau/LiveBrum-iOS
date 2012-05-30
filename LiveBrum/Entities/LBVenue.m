@@ -11,7 +11,7 @@
     
     //Hard coded with somewhere in devon for now... we'll fix it later.
     
-    location = [[CLLocation alloc] initWithLatitude:52.47666 longitude:-1.903535];
+    location = [[CLLocation alloc] initWithLatitude:52.4240325 longitude:-1.9291173999999955];
     
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
