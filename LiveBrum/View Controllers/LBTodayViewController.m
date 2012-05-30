@@ -56,15 +56,23 @@
     [headerLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]name]];
     [headerLabel setFont:[UIFont boldSystemFontOfSize:22]];
     
-    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 45, 300, 40)];
+    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 40)];
     [venueLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]venue]];
     [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
 
     LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(190, 60, 100, 20)];
     
-    [containerView addSubview:headerLabel];
+    UIImageView *pinImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 75, 18, 18)];
+    [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
+    UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
+    [distanceLabel setFont:[UIFont systemFontOfSize:12]];
+    [distanceLabel setText:@"1.0mi"];
+    
     [containerView addSubview:venueLabel];
+    [containerView addSubview:headerLabel];
     [containerView addSubview:venueBadge];
+    [containerView addSubview:pinImage];
+    [containerView addSubview:distanceLabel];
     cell.backgroundView = containerView;
     
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];

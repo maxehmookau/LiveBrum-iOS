@@ -39,6 +39,8 @@
 		50A1E0571576314F00772484 /* LBGenreColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E0561576314F00772484 /* LBGenreColours.m */; };
 		50A1E05B157643ED00772484 /* LBVenueBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E05A157643ED00772484 /* LBVenueBadge.m */; };
 		50A1E05D1576472E00772484 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E05C1576472E00772484 /* QuartzCore.framework */; };
+		50A1E06415764DE400772484 /* 193-location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E06215764DE400772484 /* 193-location-arrow.png */; };
+		50A1E06515764DE400772484 /* 193-location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E06315764DE400772484 /* 193-location-arrow@2x.png */; };
 		50B231B715750DAE00B8081F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B615750DAE00B8081F /* UIKit.framework */; };
 		50B231B915750DAE00B8081F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B815750DAE00B8081F /* Foundation.framework */; };
 		50B231BB15750DAE00B8081F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231BA15750DAE00B8081F /* CoreGraphics.framework */; };
@@ -61,6 +63,8 @@
 		50A1E059157643ED00772484 /* LBVenueBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBVenueBadge.h; path = LiveBrum/Helpers/LBVenueBadge.h; sourceTree = "<group>"; };
 		50A1E05A157643ED00772484 /* LBVenueBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBVenueBadge.m; path = LiveBrum/Helpers/LBVenueBadge.m; sourceTree = "<group>"; };
 		50A1E05C1576472E00772484 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		50A1E06215764DE400772484 /* 193-location-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "193-location-arrow.png"; path = "Images/193-location-arrow.png"; sourceTree = "<group>"; };
+		50A1E06315764DE400772484 /* 193-location-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "193-location-arrow@2x.png"; path = "Images/193-location-arrow@2x.png"; sourceTree = "<group>"; };
 		50B231B215750DAE00B8081F /* LiveBrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveBrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B231B615750DAE00B8081F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B231B815750DAE00B8081F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +126,8 @@
 		501C04DE1575522400609760 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				50A1E06215764DE400772484 /* 193-location-arrow.png */,
+				50A1E06315764DE400772484 /* 193-location-arrow@2x.png */,
 				501C04DF1575525100609760 /* 65-note.png */,
 				501C04E01575525100609760 /* 65-note@2x.png */,
 			);
@@ -303,6 +309,8 @@
 				504E403D15754FEE0049177A /* LBTodayViewController.xib in Resources */,
 				501C04E11575525100609760 /* 65-note.png in Resources */,
 				501C04E21575525100609760 /* 65-note@2x.png in Resources */,
+				50A1E06415764DE400772484 /* 193-location-arrow.png in Resources */,
+				50A1E06515764DE400772484 /* 193-location-arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

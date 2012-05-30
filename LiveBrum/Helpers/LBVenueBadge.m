@@ -27,10 +27,7 @@
     if (self) {
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
-        
-        
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 20)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
         [label setFont:[UIFont systemFontOfSize:13]];
         [label setTextColor:[UIColor colorWithWhite:9 alpha:1]];
         [label setText:genre];
