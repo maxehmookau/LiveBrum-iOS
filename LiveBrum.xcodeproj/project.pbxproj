@@ -43,6 +43,7 @@
 		50A1E06515764DE400772484 /* 193-location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E06315764DE400772484 /* 193-location-arrow@2x.png */; };
 		50A1E06B15765C6A00772484 /* LBLoadingSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E06A15765C6A00772484 /* LBLoadingSpinner.m */; };
 		50A1E06D1576667200772484 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E06C1576667200772484 /* CoreLocation.framework */; };
+		50A1E0701576698B00772484 /* LBPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E06F1576698B00772484 /* LBPerformance.m */; };
 		50B231B715750DAE00B8081F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B615750DAE00B8081F /* UIKit.framework */; };
 		50B231B915750DAE00B8081F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231B815750DAE00B8081F /* Foundation.framework */; };
 		50B231BB15750DAE00B8081F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B231BA15750DAE00B8081F /* CoreGraphics.framework */; };
@@ -70,6 +71,8 @@
 		50A1E06915765C6A00772484 /* LBLoadingSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBLoadingSpinner.h; path = LiveBrum/Helpers/LBLoadingSpinner.h; sourceTree = "<group>"; };
 		50A1E06A15765C6A00772484 /* LBLoadingSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBLoadingSpinner.m; path = LiveBrum/Helpers/LBLoadingSpinner.m; sourceTree = "<group>"; };
 		50A1E06C1576667200772484 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		50A1E06E1576698B00772484 /* LBPerformance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBPerformance.h; path = LiveBrum/Entities/LBPerformance.h; sourceTree = "<group>"; };
+		50A1E06F1576698B00772484 /* LBPerformance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBPerformance.m; path = LiveBrum/Entities/LBPerformance.m; sourceTree = "<group>"; };
 		50B231B215750DAE00B8081F /* LiveBrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveBrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B231B615750DAE00B8081F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B231B815750DAE00B8081F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -227,6 +230,8 @@
 				50B231D215750F5200B8081F /* LBVenue.m */,
 				50B231D41575110C00B8081F /* LBEventCollection.h */,
 				50B231D51575110C00B8081F /* LBEventCollection.m */,
+				50A1E06E1576698B00772484 /* LBPerformance.h */,
+				50A1E06F1576698B00772484 /* LBPerformance.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				50A1E0571576314F00772484 /* LBGenreColours.m in Sources */,
 				50A1E05B157643ED00772484 /* LBVenueBadge.m in Sources */,
 				50A1E06B15765C6A00772484 /* LBLoadingSpinner.m in Sources */,
+				50A1E0701576698B00772484 /* LBPerformance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

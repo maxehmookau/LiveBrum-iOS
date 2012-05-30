@@ -4,12 +4,15 @@
 @implementation LBAppDelegate
 
 @synthesize window = _window;
+@synthesize locationManager = _locationManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
+    
+    
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     LBTodayViewController *todayVC = [[LBTodayViewController alloc] init];
     UINavigationController *todayNC = [[UINavigationController alloc] initWithRootViewController:todayVC];
@@ -21,6 +24,12 @@
     
     [tabBarController setViewControllers:[NSArray arrayWithObjects:todayNC, nil]];
     
+    if([CLLocationManager locationServicesEnabled])
+    {
+        locationManager = [[CLLocationManager alloc] init];
+        [locationManager setPurpose:@"LiveBrum would like to know your location so we can find events close to you."];
+        [locationManager startUpdatingLocation];
+    }
     
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];

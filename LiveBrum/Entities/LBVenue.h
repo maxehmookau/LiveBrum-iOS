@@ -8,17 +8,31 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+@class LBVenue;
 
-@interface LBVenue : NSObject
+@protocol LBVenueDelegate <NSObject>
+
+-(void)userMoved;
+
+@end
+@interface LBVenue : NSObject <CLLocationManagerDelegate>
 {
     NSString *name;
     NSString *description;
-    CLLocationDistance *distance;
     CLLocation *location;
+    CLLocation *userLocation;
+    CLLocationManager *locationManager;
+    double distanceFromUser;
+    NSString *distanceString;
+    id <LBVenueDelegate> delegate;
 }
 
 -(id)initWithName:(NSString *)aName description:(NSString *)aDescription;
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *description;
+@property (nonatomic) CLLocation *location;
+@property (nonatomic) id delegate;
+@property (nonatomic) double distanceFromUser;
+@property (nonatomic) NSString *distanceString;
 @end

@@ -61,17 +61,20 @@
     [venueLabel setText:[[[[todayCollection events]objectAtIndex:indexPath.row]venue]name]];
     [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
 
-    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(70, 73, 100, 20)];
-    
+    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(80, 73, 100, 20)];
     UIImageView *pinImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 75, 18, 18)];
     [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
     UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
     [distanceLabel setFont:[UIFont systemFontOfSize:12]];
-    [distanceLabel setText:@"1.0mi"];    
-    [containerView addSubview:headerLabel];
-    [containerView addSubview:venueLabel];
+    NSString *distanceString = [[[[todayCollection events]objectAtIndex:indexPath.row]venue]distanceString]; 
+    [distanceLabel setText:distanceString];    
     [containerView addSubview:pinImage];
     [containerView addSubview:distanceLabel];
+   
+
+    [containerView addSubview:headerLabel];
+    [containerView addSubview:venueLabel];
+
     [containerView addSubview:venueBadge];
     cell.backgroundView = containerView;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
@@ -88,13 +91,19 @@
     return 100;
 }
 
+
 #pragma mark - Initialisation
 -(void)collectionDidFinishLoading
 {
     [table reloadData];
+    for (int x = 0; x < [[todayCollection events]count]; x++)
+    {
+        [[[[todayCollection events]objectAtIndex:x]venue]setDelegate:self];
+    }
     [UIView animateWithDuration:0.5
                      animations:^{spinner.alpha = 0.0;}
                      completion:^(BOOL finished){ [spinner removeFromSuperview]; }];
+    
 }
 
 -(void)collectionFailedToLoadWithError:(NSError *)error
@@ -114,10 +123,16 @@
 
 - (void)viewDidLoad
 {
-
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+
+-(void)userMoved
+{
+    [table reloadData];
+}
+
 
 -(void)viewWillAppear:(BOOL)animated    
 {
