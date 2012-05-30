@@ -16,6 +16,56 @@
     if([aGenre isEqualToString:@"art"])
     {
         return [LBGenreColours artColor];
+    }else if([aGenre isEqualToString:@"classical"])
+    {
+        return [LBGenreColours classicalColor];
+    }else if([aGenre isEqualToString:@"club"])
+    {
+        return [LBGenreColours clubColor];
+    }else if([aGenre isEqualToString:@"comedy"])
+    {
+        return [LBGenreColours comedyColor];
+    }else if([aGenre isEqualToString:@"community"])
+    {
+        return [LBGenreColours communityColor];
+    }else if ([aGenre isEqualToString:@"dance"])
+    {
+        return [LBGenreColours danceColor];
+    }else if([aGenre isEqualToString:@"film"])
+    {
+        return [LBGenreColours filmColor];
+    }else if([aGenre isEqualToString:@"folk"])
+    {
+        return [LBGenreColours folkColor];
+    }else if([aGenre isEqualToString:@"jazz"])
+    {
+        return [LBGenreColours jazzColor];
+    }else if([aGenre isEqualToString:@"rock"])
+    {
+        return [LBGenreColours rockColor];
+    }else if([aGenre isEqualToString:@"spokenWord"])
+    {
+        return [LBGenreColours spokenWordColor];
+    }else if([aGenre isEqualToString:@"theatre"])
+    {
+        return [LBGenreColours theatreColor];
+    }else if([aGenre isEqualToString:@"workshop"])
+    {
+        return [LBGenreColours workshopColor];
+    }else if([aGenre isEqualToString:@"world"])
+    {
+        return [LBGenreColours worldColor];
+    }else if([aGenre isEqualToString:@"digital"])
+    {
+        return [LBGenreColours digitalColor];
+    }else if([aGenre isEqualToString:@"general"])
+    {
+        return [LBGenreColours generalColor];
+    }else if([aGenre isEqualToString:@"news"])
+    {
+        return [LBGenreColours newsColor];
+    }else {
+        return [LBGenreColours generalColor];
     }
 }
 
