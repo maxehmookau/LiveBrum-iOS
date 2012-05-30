@@ -7,6 +7,7 @@
 //
 
 #import "LBTodayViewController.h"
+#import "LBGenreColours.h"
 
 @interface LBTodayViewController ()
 
@@ -27,12 +28,13 @@
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if(indexPath.row % 2 == 1)
-    {
-        [cell setBackgroundColor:[UIColor grayColor]];
-    }else{
-        [cell setBackgroundColor:[UIColor lightGrayColor]];
-    }
+//    if(indexPath.row % 2 == 1)
+//    {
+//        [cell setBackgroundColor:[UIColor grayColor]];
+//    }else{
+//        [cell setBackgroundColor:[UIColor lightGrayColor]];
+//    }
+    [cell setBackgroundColor:[LBGenreColours colorForGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre]]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView 

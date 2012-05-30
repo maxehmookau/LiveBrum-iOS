@@ -2,7 +2,7 @@
 #import "SBJson.h"
 
 @implementation LBEvent
-@synthesize name, desc, image, venue, delegate, dateRange;
+@synthesize name, desc, image, venue, delegate, dateRange, genre;
 
 
 #pragma mark - Initialisers
@@ -39,6 +39,7 @@
     name = [rootDictionary valueForKey:@"title"];
     desc = [rootDictionary valueForKey:@"description"];
     dateRange = [rootDictionary valueForKey:@"date_range"];
+    genre = [[rootDictionary objectForKey:@"genre"] valueForKey:@"title"];
     
     //Alert the delegate when we're done, if there is a delegate.
     [delegate eventDidFinishLoading];

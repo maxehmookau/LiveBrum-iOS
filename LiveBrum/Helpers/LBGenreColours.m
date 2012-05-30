@@ -13,55 +13,55 @@
 
 +(UIColor *)colorForGenre:(NSString *)aGenre
 {
-    if([aGenre isEqualToString:@"art"])
+    if([aGenre isEqualToString:@"Art"])
     {
         return [LBGenreColours artColor];
-    }else if([aGenre isEqualToString:@"classical"])
+    }else if([aGenre isEqualToString:@"Classical"])
     {
         return [LBGenreColours classicalColor];
-    }else if([aGenre isEqualToString:@"club"])
+    }else if([aGenre isEqualToString:@"Club"])
     {
         return [LBGenreColours clubColor];
-    }else if([aGenre isEqualToString:@"comedy"])
+    }else if([aGenre isEqualToString:@"Comedy"])
     {
         return [LBGenreColours comedyColor];
-    }else if([aGenre isEqualToString:@"community"])
+    }else if([aGenre isEqualToString:@"Community"])
     {
         return [LBGenreColours communityColor];
-    }else if ([aGenre isEqualToString:@"dance"])
+    }else if ([aGenre isEqualToString:@"Dance"])
     {
         return [LBGenreColours danceColor];
-    }else if([aGenre isEqualToString:@"film"])
+    }else if([aGenre isEqualToString:@"Film"])
     {
         return [LBGenreColours filmColor];
-    }else if([aGenre isEqualToString:@"folk"])
+    }else if([aGenre isEqualToString:@"Folk"])
     {
         return [LBGenreColours folkColor];
-    }else if([aGenre isEqualToString:@"jazz"])
+    }else if([aGenre isEqualToString:@"Jazz"])
     {
         return [LBGenreColours jazzColor];
-    }else if([aGenre isEqualToString:@"rock"])
+    }else if([aGenre isEqualToString:@"Rock & Pop"])
     {
         return [LBGenreColours rockColor];
-    }else if([aGenre isEqualToString:@"spokenWord"])
+    }else if([aGenre isEqualToString:@"Spoken Word"])
     {
         return [LBGenreColours spokenWordColor];
-    }else if([aGenre isEqualToString:@"theatre"])
+    }else if([aGenre isEqualToString:@"Theatre"])
     {
         return [LBGenreColours theatreColor];
-    }else if([aGenre isEqualToString:@"workshop"])
+    }else if([aGenre isEqualToString:@"Workshop"])
     {
         return [LBGenreColours workshopColor];
-    }else if([aGenre isEqualToString:@"world"])
+    }else if([aGenre isEqualToString:@"World"])
     {
         return [LBGenreColours worldColor];
-    }else if([aGenre isEqualToString:@"digital"])
+    }else if([aGenre isEqualToString:@"Digital"])
     {
         return [LBGenreColours digitalColor];
-    }else if([aGenre isEqualToString:@"general"])
+    }else if([aGenre isEqualToString:@"General"])
     {
         return [LBGenreColours generalColor];
-    }else if([aGenre isEqualToString:@"news"])
+    }else if([aGenre isEqualToString:@"News"])
     {
         return [LBGenreColours newsColor];
     }else {

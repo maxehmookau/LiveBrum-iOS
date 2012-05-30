@@ -13,6 +13,7 @@
     NSDictionary *rootDictionary;
     NSString *name;
     NSString *dateRange;
+    NSString *genre;
     UIImage *image;
     NSString *desc;
     LBVenue *venue;
@@ -32,6 +33,7 @@
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *dateRange;
 @property (nonatomic) NSString *desc;
+@property (nonatomic) NSString *genre;
 @property (nonatomic) UIImage *image;
 @property (nonatomic) LBVenue *venue;
 @property (nonatomic) id delegate;
