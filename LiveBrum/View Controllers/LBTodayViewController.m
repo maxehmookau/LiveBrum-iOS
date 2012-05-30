@@ -52,36 +52,34 @@
     }
     
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 40)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 40)];
     [headerLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]name]];
     [headerLabel setFont:[UIFont boldSystemFontOfSize:22]];
     headerLabel.highlightedTextColor = [UIColor whiteColor];
     
-    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 40)];
+    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 20)];
     [venueLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]venue]];
     [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
 
-    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(190, 60, 100, 20)];
+    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(70, 73, 100, 20)];
     
     UIImageView *pinImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 75, 18, 18)];
     [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
     UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
     [distanceLabel setFont:[UIFont systemFontOfSize:12]];
-    [distanceLabel setText:@"1.0mi"];
-    [containerView addSubview:venueLabel];
+    [distanceLabel setText:@"1.0mi"];    
     [containerView addSubview:headerLabel];
-    [containerView addSubview:venueBadge];
+    [containerView addSubview:venueLabel];
     [containerView addSubview:pinImage];
     [containerView addSubview:distanceLabel];
+    [containerView addSubview:venueBadge];
     cell.backgroundView = containerView;
-    
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 } 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

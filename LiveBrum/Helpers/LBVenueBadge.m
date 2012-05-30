@@ -30,6 +30,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
         [label setFont:[UIFont systemFontOfSize:13]];
         [label setTextColor:[UIColor colorWithWhite:9 alpha:1]];
+        [label setTextAlignment:UITextAlignmentCenter];
         [label setText:genre];
         float viewWidth = self.frame.size.width;
         float viewHeight = self.frame.size.height;
