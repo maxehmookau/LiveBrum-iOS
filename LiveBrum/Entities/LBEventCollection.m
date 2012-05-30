@@ -50,6 +50,12 @@
     [self convertToEvents];
 }
 
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    //Connection failed, pass the delegate the error. 
+    [delegate collectionFailedToLoadWithError:error];
+}
+
 #pragma mark - Convert Data to Events
 -(int)numberOfEventsInCollection
 {
@@ -72,9 +78,9 @@
 -(void)eventDidFinishLoading
 {
     completedEvents = completedEvents + 1;
-    if(completedEvents >= [self numberOfEventsInCollection])
+    if(completedEvents >= [self numberOfEventsInCollection]-1)
     {
-        [delegate dataDidFinishLoading];
+        [delegate collectionDidFinishLoading];
     }
 }
 @end

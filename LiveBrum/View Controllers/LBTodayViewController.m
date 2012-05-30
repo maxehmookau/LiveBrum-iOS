@@ -50,9 +50,15 @@
 }
 
 #pragma mark - Initialisation
--(void)dataDidFinishLoading
+-(void)collectionDidFinishLoading
 {
     [table reloadData];
+}
+
+-(void)collectionFailedToLoadWithError:(NSError *)error
+{
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+    [errorAlert show];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

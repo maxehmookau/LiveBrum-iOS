@@ -13,7 +13,8 @@
 @class LBEventCollection;
 @protocol LBEventCollectionDelegate <NSObject>
 
--(void)dataDidFinishLoading;
+-(void)collectionDidFinishLoading;
+-(void)collectionFailedToLoadWithError:(NSError *)error;
 
 @end
 
