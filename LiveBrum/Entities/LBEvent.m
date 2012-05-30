@@ -1,8 +1,9 @@
 #import "LBEvent.h"
 #import "SBJson.h"
+#import "LBPerformance.h"
 
 @implementation LBEvent
-@synthesize name, desc, image, delegate, dateRange, genre, venue;
+@synthesize name, desc, image, delegate, dateRange, genre, venue, performances;
 
 
 #pragma mark - Initialisers
@@ -32,6 +33,7 @@
 }
 
 
+
 #pragma mark - Data Parsing
 -(void)parseReceivedData
 {
@@ -41,8 +43,18 @@
     dateRange = [rootDictionary valueForKey:@"date_range"];
     genre = [[rootDictionary objectForKey:@"genre"] valueForKey:@"title"];
     venue = [[LBVenue alloc] initWithName:[[rootDictionary objectForKey:@"venue"] valueForKey:@"title"] description:[[rootDictionary objectForKey:@"venue"] valueForKey:@"description"]];
+    performances = [[NSMutableArray alloc] initWithCapacity:[self numberOfPerformances]];
+    for (int x = 0; x < [self numberOfPerformances]; x++)
+    {
+        [performances addObject:[[LBPerformance alloc] initWithDate:[[[rootDictionary objectForKey:@"performances"]objectAtIndex:x]valueForKey:@"date"]]];
+    }
     
     //Alert the delegate when we're done, if there is a delegate.
     [delegate eventDidFinishLoading];
+}
+      
+-(int)numberOfPerformances
+{
+    return [[rootDictionary objectForKey:@"performances"]count];
 }
 @end

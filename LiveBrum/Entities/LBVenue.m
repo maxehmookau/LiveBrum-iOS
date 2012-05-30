@@ -38,7 +38,7 @@
     }
     
     
-    NSLog(@"%@", distanceString);
+    //NSLog(@"%@", distanceString);
     //Alert the delegate that the user has moved in relation to the venue
     [delegate userMoved];
 }

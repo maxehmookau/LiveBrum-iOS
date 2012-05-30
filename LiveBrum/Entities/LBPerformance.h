@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface LBPerformance : NSObject
+{
+    NSDate *date;
+}
 
+-(id)initWithDate:(NSString *)aDate;
+-(NSString *)time;
+
+@property (nonatomic) NSDate *date;
 @end

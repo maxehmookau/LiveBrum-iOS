@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "LBVenue.h"
+#import "LBPerformance.h"
 @class LBEvent;
 
 @protocol LBEventProtocol <NSObject>
@@ -16,6 +17,7 @@
     NSString *genre;
     UIImage *image;
     NSString *desc;
+    NSMutableArray *performances;
     LBVenue *venue;
     id <LBEventProtocol> delegate;
     
@@ -29,6 +31,7 @@
  */
 -(id)initWithLiveBrumURL:(NSURL *)aURL;
 -(void)parseReceivedData;
+-(int)numberOfPerformances;
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *dateRange;
@@ -36,6 +39,7 @@
 @property (nonatomic) NSString *genre;
 @property (nonatomic) UIImage *image; 
 @property (nonatomic) LBVenue *venue;
+@property (nonatomic) NSMutableArray *performances;
 @property (nonatomic) id delegate;
 
 @end

@@ -60,15 +60,33 @@
     [venueLabel setText:[[[[todayCollection events]objectAtIndex:indexPath.row]venue]name]];
     [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
 
-    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(80, 73, 100, 20)];
+    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
     UIImageView *pinImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 75, 18, 18)];
     [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
     UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
     [distanceLabel setFont:[UIFont systemFontOfSize:12]];
     NSString *distanceString = [[[[todayCollection events]objectAtIndex:indexPath.row]venue]distanceString]; 
-    [distanceLabel setText:distanceString];  
     
+    if([[[[todayCollection events]objectAtIndex:indexPath.row]performances]count] == 1)
+    {
+        UILabel *performanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 50, 15)];
+        [performanceLabel setText:[[[[[todayCollection events]objectAtIndex:indexPath.row]performances]objectAtIndex:0]time]];
+        [performanceLabel setBackgroundColor:[UIColor clearColor]];
+        [performanceLabel setFont:[UIFont systemFontOfSize:12]];
+        
+        [containerView addSubview:performanceLabel];
+    }else{
+        UILabel *performanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 50, 15)];
+        [performanceLabel setText:[NSString stringWithFormat:@"%i shows", [[[[todayCollection events]objectAtIndex:indexPath.row]performances]count]]];
+        [performanceLabel setBackgroundColor:[UIColor clearColor]];
+        [performanceLabel setFont:[UIFont systemFontOfSize:12]];
+        
+        [containerView addSubview:performanceLabel];
+    }
+    
+    [distanceLabel setText:distanceString];  
     [containerView addSubview:pinImage];
+    
     [distanceLabel setBackgroundColor:[UIColor clearColor]];
     [containerView addSubview:distanceLabel];
     

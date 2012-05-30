@@ -36,6 +36,8 @@
 		504E4036157519CE0049177A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B231F01575179500B8081F /* SBJsonWriter.m */; };
 		504E403C15754FEE0049177A /* LBTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504E403A15754FEE0049177A /* LBTodayViewController.m */; };
 		504E403D15754FEE0049177A /* LBTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504E403B15754FEE0049177A /* LBTodayViewController.xib */; };
+		50552E6E1576B390004B2E99 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50552E6D1576B390004B2E99 /* icon.png */; };
+		50552E701576B394004B2E99 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50552E6F1576B394004B2E99 /* icon@2x.png */; };
 		50A1E0571576314F00772484 /* LBGenreColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E0561576314F00772484 /* LBGenreColours.m */; };
 		50A1E05B157643ED00772484 /* LBVenueBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E05A157643ED00772484 /* LBVenueBadge.m */; };
 		50A1E05D1576472E00772484 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E05C1576472E00772484 /* QuartzCore.framework */; };
@@ -61,6 +63,8 @@
 		504E403915754FEE0049177A /* LBTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBTodayViewController.h; path = "LiveBrum/View Controllers/LBTodayViewController.h"; sourceTree = "<group>"; };
 		504E403A15754FEE0049177A /* LBTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBTodayViewController.m; path = "LiveBrum/View Controllers/LBTodayViewController.m"; sourceTree = "<group>"; };
 		504E403B15754FEE0049177A /* LBTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBTodayViewController.xib; path = "LiveBrum/View Controllers/LBTodayViewController.xib"; sourceTree = "<group>"; };
+		50552E6D1576B390004B2E99 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		50552E6F1576B394004B2E99 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		50A1E0551576314F00772484 /* LBGenreColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGenreColours.h; path = LiveBrum/Helpers/LBGenreColours.h; sourceTree = "<group>"; };
 		50A1E0561576314F00772484 /* LBGenreColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGenreColours.m; path = LiveBrum/Helpers/LBGenreColours.m; sourceTree = "<group>"; };
 		50A1E059157643ED00772484 /* LBVenueBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBVenueBadge.h; path = LiveBrum/Helpers/LBVenueBadge.h; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		501C04DE1575522400609760 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				50552E6F1576B394004B2E99 /* icon@2x.png */,
+				50552E6D1576B390004B2E99 /* icon.png */,
 				50A1E06215764DE400772484 /* 193-location-arrow.png */,
 				50A1E06315764DE400772484 /* 193-location-arrow@2x.png */,
 				501C04DF1575525100609760 /* 65-note.png */,
@@ -325,6 +331,8 @@
 				501C04E21575525100609760 /* 65-note@2x.png in Resources */,
 				50A1E06415764DE400772484 /* 193-location-arrow.png in Resources */,
 				50A1E06515764DE400772484 /* 193-location-arrow@2x.png in Resources */,
+				50552E6E1576B390004B2E99 /* icon.png in Resources */,
+				50552E701576B394004B2E99 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
