@@ -55,6 +55,7 @@
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 40)];
     [headerLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]name]];
     [headerLabel setFont:[UIFont boldSystemFontOfSize:22]];
+    headerLabel.highlightedTextColor = [UIColor whiteColor];
     
     UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 40)];
     [venueLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]venue]];
@@ -67,7 +68,6 @@
     UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
     [distanceLabel setFont:[UIFont systemFontOfSize:12]];
     [distanceLabel setText:@"1.0mi"];
-    
     [containerView addSubview:venueLabel];
     [containerView addSubview:headerLabel];
     [containerView addSubview:venueBadge];
@@ -81,6 +81,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -93,6 +94,9 @@
 -(void)collectionDidFinishLoading
 {
     [table reloadData];
+    [UIView animateWithDuration:0.5
+                     animations:^{spinner.alpha = 0.0;}
+                     completion:^(BOOL finished){ [spinner removeFromSuperview]; }];
 }
 
 -(void)collectionFailedToLoadWithError:(NSError *)error
@@ -119,6 +123,8 @@
 
 -(void)viewWillAppear:(BOOL)animated    
 {
+    spinner = [[LBLoadingSpinner alloc] init];
+    [self.view addSubview:spinner];
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0 alpha:1]];
     [self setTitle:@"Today"];
     todayCollection = [[LBEventCollection alloc] withTodaysEvents];

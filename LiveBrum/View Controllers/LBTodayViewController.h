@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LBEventCollection.h"
+#import "LBLoadingSpinner.h"
 
 @interface LBTodayViewController : UIViewController <LBEventCollectionDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     LBEventCollection *todayCollection;
     IBOutlet UITableView *table;
+    LBLoadingSpinner *spinner;
 }
 
 @property (nonatomic) LBEventCollection *todayCollection;
