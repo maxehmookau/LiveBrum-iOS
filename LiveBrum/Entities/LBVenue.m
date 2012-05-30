@@ -9,5 +9,12 @@
 #import "LBVenue.h"
 
 @implementation LBVenue
+@synthesize name, description;
 
+-(id)initWithName:(NSString *)aName description:(NSString *)aDescription
+{
+    name = aName;
+    description = aDescription;
+    return [super init];
+}
 @end

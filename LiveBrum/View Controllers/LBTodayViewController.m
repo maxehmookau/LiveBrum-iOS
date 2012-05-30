@@ -58,7 +58,7 @@
     headerLabel.highlightedTextColor = [UIColor whiteColor];
     
     UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 20)];
-    [venueLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]venue]];
+    [venueLabel setText:[[[[todayCollection events]objectAtIndex:indexPath.row]venue]name]];
     [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
 
     LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(70, 73, 100, 20)];

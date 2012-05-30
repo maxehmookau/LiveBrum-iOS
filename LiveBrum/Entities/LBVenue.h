@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface LBVenue : NSObject
+{
+    NSString *name;
+    NSString *description;
+    CLLocationDistance *distance;
+    CLLocation *location;
+}
 
+-(id)initWithName:(NSString *)aName description:(NSString *)aDescription;
+
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *description;
 @end

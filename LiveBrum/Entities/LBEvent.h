@@ -16,7 +16,7 @@
     NSString *genre;
     UIImage *image;
     NSString *desc;
-    NSString *venue;
+    LBVenue *venue;
     id <LBEventProtocol> delegate;
     
     NSMutableData *receivedData;
@@ -34,8 +34,8 @@
 @property (nonatomic) NSString *dateRange;
 @property (nonatomic) NSString *desc;
 @property (nonatomic) NSString *genre;
-@property (nonatomic) UIImage *image;
-@property (nonatomic) NSString *venue; //This is only temporary
+@property (nonatomic) UIImage *image; 
+@property (nonatomic) LBVenue *venue;
 @property (nonatomic) id delegate;
 
 @end
