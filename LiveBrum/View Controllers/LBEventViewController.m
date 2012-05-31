@@ -42,13 +42,30 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];  
+                reuseIdentifier:CellIdentifier];
+        if(indexPath.section == 2)
+        {
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            [cell.contentView addSubview:[[event venue]mapView]];
+        }
     }
     
     
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case 2:
+            return 200;
+            break;
+            
+        default:
+            return 44;
+            break;
+    }
+}
 - (void)viewDidLoad
 {
     [self setTitle:@"Event Listing"];

@@ -28,7 +28,7 @@
         [innerSquare setBackgroundColor:[UIColor grayColor]];
         [innerSquare.layer setCornerRadius:5];
         [innerSquare.layer setMasksToBounds:YES];
-        [innerSquare setAlpha:0.89];
+        [innerSquare setAlpha:0.6];
         [self addSubview:innerSquare];
         
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];

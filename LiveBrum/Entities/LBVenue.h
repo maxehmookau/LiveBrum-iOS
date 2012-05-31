@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 @class LBVenue;
 
 @protocol LBVenueDelegate <NSObject>
@@ -25,6 +26,7 @@
     double distanceFromUser;
     NSString *distanceString;
     id <LBVenueDelegate> delegate;
+    MKMapView *mapView;
 }
 
 -(id)initWithName:(NSString *)aName description:(NSString *)aDescription;
@@ -35,4 +37,5 @@
 @property (nonatomic) id delegate;
 @property (nonatomic) double distanceFromUser;
 @property (nonatomic) NSString *distanceString;
+@property (nonatomic) MKMapView *mapView;
 @end

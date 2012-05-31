@@ -151,27 +151,41 @@
     return self;
 }
 
+-(void)showActivityIndicator
+{
+    UIActivityIndicatorView * activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [activityView startAnimating];
+    [activityView sizeToFit];
+    [activityView setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin)];
+    UIBarButtonItem *spinningButton = [[UIBarButtonItem alloc] initWithCustomView:activityView];
+    [self.navigationItem setRightBarButtonItem:spinningButton];
+    
+    [self viewDidLoad];
+    
+}
+
+-(void)showReloadButton
+{
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(showActivityIndicator)];
+    [self.navigationItem setRightBarButtonItem:refreshButton];
+}
+
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-
--(void)userMoved
-{
-    [table reloadData];
-}
-
-
--(void)viewWillAppear:(BOOL)animated    
-{
     spinner = [[LBLoadingSpinner alloc] init];
     [self.view addSubview:spinner];
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0 alpha:1]];
     [self setTitle:@"Today"];
     todayCollection = [[LBEventCollection alloc] withTodaysEvents];
     [todayCollection setDelegate:self];
+    [self showReloadButton];
+}
+
+-(void)userMoved
+{
+    [table reloadData];
 }
 
 - (void)viewDidUnload

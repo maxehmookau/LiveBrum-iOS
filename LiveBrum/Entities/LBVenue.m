@@ -1,8 +1,9 @@
 #import "LBVenue.h"
 #import "LBAppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation LBVenue
-@synthesize name, description, location, distanceFromUser, delegate, distanceString;
+@synthesize name, description, location, distanceFromUser, delegate, distanceString, mapView;
 
 -(id)initWithName:(NSString *)aName description:(NSString *)aDescription
 {
@@ -10,7 +11,6 @@
     description = aDescription;
     
     //Hard coded with somewhere in devon for now... we'll fix it later.
-    
     location = [[CLLocation alloc] initWithLatitude:52.4240325 longitude:-1.9291173999999955];
     
     locationManager = [[CLLocationManager alloc] init];
@@ -18,6 +18,14 @@
     [locationManager startUpdatingLocation];
     [locationManager setDistanceFilter:20];
     distanceFromUser = [location distanceFromLocation:userLocation];
+    
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 300, 199)];
+    [mapView setMapType:MKMapTypeStandard];
+    [mapView.layer setCornerRadius:10];
+    [mapView.layer setMasksToBounds:YES];
+ 
+    [mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.4240325, -1.9291173999999955), MKCoordinateSpanMake(0.001, 0.006))animated:YES];
+    
     return [super init];
 }
 
