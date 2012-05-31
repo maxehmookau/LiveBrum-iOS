@@ -37,7 +37,12 @@
 #pragma mark - Data Parsing
 -(void)parseReceivedData
 {
-    rootDictionary = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] JSONValue];
+    NSError *error = nil;
+    rootDictionary = [NSJSONSerialization
+                                      JSONObjectWithData:receivedData
+                                      options:0
+                                      error:&error];
+
     name = [rootDictionary valueForKey:@"title"];
     desc = [rootDictionary valueForKey:@"description"];
     dateRange = [rootDictionary valueForKey:@"date_range"];
@@ -48,7 +53,6 @@
     {
         [performances addObject:[[LBPerformance alloc] initWithDate:[[[rootDictionary objectForKey:@"performances"]objectAtIndex:x]valueForKey:@"date"]]];
     }
-    
     //Alert the delegate when we're done, if there is a delegate.
     [delegate eventDidFinishLoading];
 }

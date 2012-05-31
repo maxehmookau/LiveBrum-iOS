@@ -7,6 +7,8 @@
 //
 
 #import "LBEventViewController.h"
+#import "LBGenreColours.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LBEventViewController ()
 
@@ -41,12 +43,27 @@
                              dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
+                initWithStyle:UITableViewCellStyleSubtitle
                 reuseIdentifier:CellIdentifier];
         if(indexPath.section == 2)
         {
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             [cell.contentView addSubview:[[event venue]mapView]];
+        }else if(indexPath.section == 0)
+        {
+            [cell.textLabel setText:[event name]];
+            [cell.detailTextLabel setText:[[event venue]name]];
+        }else if(indexPath.section == 1)
+        {
+            UILabel *genreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+            [genreLabel setText:[event genre]];
+            [genreLabel setBackgroundColor:[UIColor clearColor]];
+            [genreLabel setTextAlignment:UITextAlignmentCenter];
+            [genreLabel setTextColor:[UIColor whiteColor]];
+            [genreLabel setFont:[UIFont systemFontOfSize:22]];
+            [cell.contentView addSubview:genreLabel];
+            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+            [cell setBackgroundColor:[LBGenreColours colorForGenre:[event genre]]];
         }
     }
     

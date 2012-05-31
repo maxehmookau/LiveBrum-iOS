@@ -27,6 +27,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [todayCollection numberOfEventsInCollection];
+    //return 10;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -179,6 +180,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0 alpha:1]];
     [self setTitle:@"Today"];
     todayCollection = [[LBEventCollection alloc] withTodaysEvents];
+    //todayCollection = [[LBEventCollection alloc] initWithDate:@"23" month:@"04" year:@"2011"];
     [todayCollection setDelegate:self];
     [self showReloadButton];
 }

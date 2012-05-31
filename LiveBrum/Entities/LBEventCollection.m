@@ -1,6 +1,7 @@
 #import "LBEventCollection.h"
 #import "LBEvent.h"
 #import "SBJson.h"
+#include "NSDictionary_JSONExtensions.h"
 
 @implementation LBEventCollection
 @synthesize events, delegate;
@@ -63,7 +64,13 @@
 //Called once the JSON has finished downloading. 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    root = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] JSONValue];
+    NSError *error = nil;
+    id rootObject = [NSJSONSerialization
+                     JSONObjectWithData:receivedData
+                     options:0
+                     error:&error];
+
+    root = rootObject;
     [self convertToEvents];
 }
 
@@ -81,13 +88,15 @@
 
 -(void)convertToEvents
 {
+    //Can't deal with '!
     completedEvents = 0;
     events = [[NSMutableArray alloc] initWithCapacity:[self numberOfEventsInCollection]];
     for (int x = 0; x < [self numberOfEventsInCollection]; x++)
     {
         NSDictionary *currentEvent = [[root objectForKey:@"performances"] objectAtIndex:x];
-        LBEvent *newEvent = [[LBEvent alloc] initWithLiveBrumURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.json", [currentEvent valueForKey:@"url"]]]];
+        LBEvent *newEvent = [[LBEvent alloc] initWithLiveBrumURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.json", [[currentEvent valueForKey:@"url"]stringByReplacingOccurrencesOfString:@"’" withString:@"%E2%80%99"]]]];
         [newEvent setDelegate:self];
+        NSLog(@"%@", [[currentEvent valueForKey:@"url"]stringByReplacingOccurrencesOfString:@"’" withString:@"%E2%80%99"]);
         [events addObject:newEvent];
     }    
 }
