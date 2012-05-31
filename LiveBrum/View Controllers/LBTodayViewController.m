@@ -48,61 +48,65 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-    }
-    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 40)];
-    [headerLabel setText:[[[todayCollection events]objectAtIndex:indexPath.row]name]];
-    [headerLabel setFont:[UIFont boldSystemFontOfSize:22]];
-    headerLabel.highlightedTextColor = [UIColor whiteColor];
-    
-    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 20)];
-    [venueLabel setText:[[[[todayCollection events]objectAtIndex:indexPath.row]venue]name]];
-    [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
+                reuseIdentifier:CellIdentifier];        
+        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 40)];
+        [headerLabel setFont:[UIFont boldSystemFontOfSize:22]];
+        [headerLabel setTag:100];
+        
+        UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 20)];
+        [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
+        [venueLabel setTag:200];
+        
+        LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
+        [venueBadge setTag:300];
+        
+        UIImageView *pinImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 75, 18, 18)];
+        [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
+        [pinImage setTag:400];
+        
+        UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
+        [distanceLabel setFont:[UIFont systemFontOfSize:12]];
+        [distanceLabel setTag:500];
+        
+        UILabel *performanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 50, 15)];
+        [performanceLabel setTag:600];
+        [performanceLabel setFont:[UIFont boldSystemFontOfSize:12]];
 
-    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
-    UIImageView *pinImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 75, 18, 18)];
-    [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
-    UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
-    [distanceLabel setFont:[UIFont systemFontOfSize:12]];
-    NSString *distanceString = [[[[todayCollection events]objectAtIndex:indexPath.row]venue]distanceString]; 
+        
+        [cell.contentView addSubview:headerLabel];
+        [cell.contentView addSubview:venueLabel];
+        [cell.contentView addSubview:distanceLabel];
+        [cell.contentView addSubview:pinImage];
+        [cell.contentView addSubview:venueBadge];
+        [cell.contentView addSubview:performanceLabel];
+
+    }
     
+    UILabel *headerLabel = (UILabel *) [cell.contentView viewWithTag:100];
+    headerLabel.text = [[[todayCollection events]objectAtIndex:indexPath.row]name];
+    
+    UILabel *venueLabel = (UILabel *) [cell.contentView viewWithTag:200];
+    venueLabel.text = [[[[todayCollection events]objectAtIndex:indexPath.row]venue]name];
+    
+    UIImageView *pinImage = (UIImageView *) [cell.contentView viewWithTag:400];
+    [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
+    
+    UILabel *distanceLabel = (UILabel *)[cell.contentView viewWithTag:500];
+    distanceLabel.text = [[[[todayCollection events]objectAtIndex:indexPath.row]venue]distanceString];
+    
+    UILabel *performanceLabel = (UILabel *) [cell.contentView viewWithTag:600];
     if([[[[todayCollection events]objectAtIndex:indexPath.row]performances]count] == 1)
     {
-        UILabel *performanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 50, 15)];
         [performanceLabel setText:[[[[[todayCollection events]objectAtIndex:indexPath.row]performances]objectAtIndex:0]time]];
-        [performanceLabel setBackgroundColor:[UIColor clearColor]];
-        [performanceLabel setFont:[UIFont systemFontOfSize:12]];
-        
-        [containerView addSubview:performanceLabel];
     }else{
-        UILabel *performanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 50, 15)];
         [performanceLabel setText:[NSString stringWithFormat:@"%i shows", [[[[todayCollection events]objectAtIndex:indexPath.row]performances]count]]];
-        [performanceLabel setBackgroundColor:[UIColor clearColor]];
-        [performanceLabel setFont:[UIFont systemFontOfSize:12]];
-        
-        [containerView addSubview:performanceLabel];
-    }
-    
-    [distanceLabel setText:distanceString];  
-    [containerView addSubview:pinImage];
-    
-    [distanceLabel setBackgroundColor:[UIColor clearColor]];
-    [containerView addSubview:distanceLabel];
-    
-    [headerLabel setBackgroundColor:[UIColor clearColor]];
-    [containerView addSubview:headerLabel];
-    [venueLabel setBackgroundColor:[UIColor clearColor]];
-    [containerView addSubview:venueLabel];
-
-    [containerView addSubview:venueBadge];
-    if(indexPath.row % 2 == 0)
-    {
-        [containerView setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.05]];
-    }else{
-        [containerView setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.02]];
-    }
-    cell.backgroundView = containerView;
+    }   
+//    if(indexPath.row % 2 == 0)
+//    {
+//        [cell setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.05]];
+//    }else{
+//        [cell setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.02]];
+//    }
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 } 
@@ -122,6 +126,8 @@
 -(void)collectionDidFinishLoading
 {
     [table reloadData];
+    [table setNeedsDisplay];
+    [table setNeedsLayout];
     for (int x = 0; x < [[todayCollection events]count]; x++)
     {
         [[[[todayCollection events]objectAtIndex:x]venue]setDelegate:self];
