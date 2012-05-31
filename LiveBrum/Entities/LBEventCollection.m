@@ -11,11 +11,27 @@
     //Permalink in this format http://livebrum.co.uk/YYYY/MM/DD.json
     //Go get that data.
     NSString *urlString = [[NSString alloc] initWithFormat:@"http://www.livebrum.co.uk/%@/%@/%@.json", aYear, aMonth, aDate];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-    NSURLConnection *collectionConn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [collectionConn start];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:15];
+    NSString *cacheContent = [[NSString alloc] initWithData:[[[NSURLCache sharedURLCache] cachedResponseForRequest:request]data] encoding:NSUTF8StringEncoding];
+        NSURLConnection *collectionConn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if([[NSURLCache sharedURLCache]cachedResponseForRequest:request] == nil)
+    {
+        
+        [collectionConn start];
+    }else{
+        [receivedData appendData:[[[NSURLCache sharedURLCache]cachedResponseForRequest:request]data]];
+        NSLog(@"%@",cacheContent);
+    }
+    
     return [super init];
 }
+
+-(NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
+{
+    //NSLog(@"%@", [cachedResponse description]);
+    return cachedResponse;
+}
+
 
 -(id)withTodaysEvents
 {

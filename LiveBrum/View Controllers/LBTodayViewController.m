@@ -9,6 +9,7 @@
 #import "LBTodayViewController.h"
 #import "LBGenreColours.h"
 #import "LBVenueBadge.h"
+#import "LBEventViewController.h"
 
 @interface LBTodayViewController ()
 
@@ -101,18 +102,14 @@
     }else{
         [performanceLabel setText:[NSString stringWithFormat:@"%i shows", [[[[todayCollection events]objectAtIndex:indexPath.row]performances]count]]];
     }   
-//    if(indexPath.row % 2 == 0)
-//    {
-//        [cell setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.05]];
-//    }else{
-//        [cell setBackgroundColor:[UIColor colorWithRed:0.239 green:0.239 blue:0.232 alpha:0.02]];
-//    }
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 } 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    LBEventViewController *eventVC = [[LBEventViewController alloc] initWithEvent:[[todayCollection events]objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:eventVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -132,9 +129,10 @@
     {
         [[[[todayCollection events]objectAtIndex:x]venue]setDelegate:self];
     }
-    [UIView animateWithDuration:0.5
-                     animations:^{spinner.alpha = 0.0;}
-                     completion:^(BOOL finished){ [spinner removeFromSuperview]; }];
+//    [UIView animateWithDuration:0.5
+//                     animations:^{spinner.alpha = 0.0;}
+//                     completion:^(BOOL finished){ [spinner removeFromSuperview]; }];
+    [spinner removeFromSuperview];
     
 }
 
