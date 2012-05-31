@@ -59,8 +59,7 @@
         [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
         [venueLabel setTag:200];
         
-        LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
-        [venueBadge setTag:300];
+        
         
         UIImageView *pinImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 75, 18, 18)];
         [pinImage setImage:[UIImage imageNamed:@"193-location-arrow.png"]];
@@ -79,10 +78,15 @@
         [cell.contentView addSubview:venueLabel];
         [cell.contentView addSubview:distanceLabel];
         [cell.contentView addSubview:pinImage];
-        [cell.contentView addSubview:venueBadge];
+        
         [cell.contentView addSubview:performanceLabel];
 
     }
+    
+    
+    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
+    [venueBadge setTag:300];
+    [cell.contentView addSubview:venueBadge];
     
     UILabel *headerLabel = (UILabel *) [cell.contentView viewWithTag:100];
     headerLabel.text = [[[todayCollection events]objectAtIndex:indexPath.row]name];
@@ -180,7 +184,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0 alpha:1]];
     [self setTitle:@"Today"];
     todayCollection = [[LBEventCollection alloc] withTodaysEvents];
-    //todayCollection = [[LBEventCollection alloc] initWithDate:@"23" month:@"04" year:@"2011"];
+    //todayCollection = [[LBEventCollection alloc] initWithDate:@"25" month:@"04" year:@"2011"];
     [todayCollection setDelegate:self];
     [self showReloadButton];
 }

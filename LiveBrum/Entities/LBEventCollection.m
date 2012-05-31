@@ -88,15 +88,15 @@
 
 -(void)convertToEvents
 {
-    //Can't deal with '!
+    //Fixed... for now. This could get ugly!
     completedEvents = 0;
     events = [[NSMutableArray alloc] initWithCapacity:[self numberOfEventsInCollection]];
     for (int x = 0; x < [self numberOfEventsInCollection]; x++)
     {
         NSDictionary *currentEvent = [[root objectForKey:@"performances"] objectAtIndex:x];
-        LBEvent *newEvent = [[LBEvent alloc] initWithLiveBrumURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.json", [[currentEvent valueForKey:@"url"]stringByReplacingOccurrencesOfString:@"’" withString:@"%E2%80%99"]]]];
+        LBEvent *newEvent = [[LBEvent alloc] initWithLiveBrumURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@.json", [[[currentEvent valueForKey:@"url"]stringByReplacingOccurrencesOfString:@"’" withString:@"%E2%80%99"]stringByReplacingOccurrencesOfString:@"–" withString:@"%E2%80%93"]]]];
         [newEvent setDelegate:self];
-        NSLog(@"%@", [[currentEvent valueForKey:@"url"]stringByReplacingOccurrencesOfString:@"’" withString:@"%E2%80%99"]);
+        //NSLog(@"%@", [[[currentEvent valueForKey:@"url"]stringByReplacingOccurrencesOfString:@"’" withString:@"%E2%80%99"]stringByReplacingOccurrencesOfString:@"–" withString:@"%E2%80%93"]);
         [events addObject:newEvent];
     }    
 }
