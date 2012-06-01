@@ -72,21 +72,26 @@
         UILabel *performanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 50, 15)];
         [performanceLabel setTag:600];
         [performanceLabel setFont:[UIFont boldSystemFontOfSize:12]];
+        
+        //LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
+        LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithFrame:CGRectMake(85, 73, 100, 20)];
+        [venueBadge setTag:300];
+        
 
         
         [cell.contentView addSubview:headerLabel];
         [cell.contentView addSubview:venueLabel];
         [cell.contentView addSubview:distanceLabel];
         [cell.contentView addSubview:pinImage];
-        
+        [cell.contentView addSubview:venueBadge];
         [cell.contentView addSubview:performanceLabel];
 
     }
     
     
-    LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
-    [venueBadge setTag:300];
-    [cell.contentView addSubview:venueBadge];
+    LBVenueBadge *venueBadge = (LBVenueBadge *) [cell.contentView viewWithTag:300];
+    [[venueBadge label]setText:[[[todayCollection events]objectAtIndex:indexPath.row]genre]];
+    [venueBadge setBackgroundColor:[LBGenreColours colorForGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre]]];
     
     UILabel *headerLabel = (UILabel *) [cell.contentView viewWithTag:100];
     headerLabel.text = [[[todayCollection events]objectAtIndex:indexPath.row]name];
@@ -110,6 +115,8 @@
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 } 
+
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LBVenueBadge : UIView
+{
+    UILabel *label;
+}
 -(id)initWithGenre:(NSString *)genre frame:(CGRect)frame;
+
+@property (nonatomic) UILabel *label;
 @end

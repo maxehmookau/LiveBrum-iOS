@@ -11,12 +11,27 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation LBVenueBadge
-
+@synthesize label;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.layer.cornerRadius = 5;
+        self.layer.masksToBounds = YES;
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
+        [label setFont:[UIFont systemFontOfSize:13]];
+        [label setTextColor:[UIColor colorWithWhite:9 alpha:1]];
+        [label setTextAlignment:UITextAlignmentCenter];
+        float viewWidth = self.frame.size.width;
+        float viewHeight = self.frame.size.height;
+        float labelWidth = label.frame.size.width;
+        float labelHeight = label.frame.size.height;
+        float xpos = (viewWidth/2.0f) - (labelWidth/2.0f);
+        float ypos = (viewHeight/2.0f) - (labelHeight/2.0f);
+        [label setFrame:CGRectMake(xpos,ypos,labelWidth,labelHeight)];
+        [label setBackgroundColor:[UIColor clearColor]];
+        [self addSubview:label];
+        [self setBackgroundColor:[UIColor greenColor]];
     }
     return self;
 }
@@ -27,7 +42,7 @@
     if (self) {
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
         [label setFont:[UIFont systemFontOfSize:13]];
         [label setTextColor:[UIColor colorWithWhite:9 alpha:1]];
         [label setTextAlignment:UITextAlignmentCenter];

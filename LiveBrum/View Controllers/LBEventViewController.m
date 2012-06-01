@@ -9,6 +9,10 @@
 #import "LBEventViewController.h"
 #import "LBGenreColours.h"
 #import <QuartzCore/QuartzCore.h>
+#define FONT_SIZE 14.0f
+#define CELL_CONTENT_WIDTH 320.0f
+#define CELL_CONTENT_MARGIN 10.0f
+
 
 @interface LBEventViewController ()
 
@@ -45,7 +49,7 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleSubtitle
                 reuseIdentifier:CellIdentifier];
-        if(indexPath.section == 2)
+        if(indexPath.section == 3)
         {
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             [cell.contentView addSubview:[[event venue]mapView]];
@@ -53,7 +57,7 @@
         {
             [cell.textLabel setText:[event name]];
             [cell.detailTextLabel setText:[[event venue]name]];
-        }else if(indexPath.section == 1)
+        }else if(indexPath.section == 2)
         {
             UILabel *genreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
             [genreLabel setText:[event genre]];
@@ -64,25 +68,21 @@
             [cell.contentView addSubview:genreLabel];
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
             [cell setBackgroundColor:[LBGenreColours colorForGenre:[event genre]]];
+        }else if(indexPath.section == 1)
+        {
+            [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
+            [cell.textLabel setNumberOfLines:10];
+            cell.textLabel.text =  [event desc];
         }
     }
-    
-    
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.section) {
-        case 2:
-            return 200;
-            break;
-            
-        default:
-            return 44;
-            break;
-    }
+    return 44;
 }
+
 - (void)viewDidLoad
 {
     [self setTitle:@"Event Listing"];

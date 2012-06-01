@@ -16,7 +16,7 @@
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
     [locationManager startUpdatingLocation];
-    [locationManager setDistanceFilter:20];
+    [locationManager setDistanceFilter:2000];
     distanceFromUser = [location distanceFromLocation:userLocation];
     
     mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 300, 199)];

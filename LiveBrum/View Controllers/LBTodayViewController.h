@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LBVenue.h"
 
-@interface LBTodayViewController : UIViewController <LBEventCollectionDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, LBVenueDelegate>
+@interface LBTodayViewController : UIViewController <LBEventCollectionDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, LBVenueDelegate, UIScrollViewDelegate>
 {
     LBEventCollection *todayCollection;
     IBOutlet UITableView *table;
