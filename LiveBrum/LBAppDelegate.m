@@ -1,5 +1,6 @@
 #import "LBAppDelegate.h"
 #import "LBTodayViewController.h"
+#import "LBGenresSelectViewController.h"
 
 @implementation LBAppDelegate
 
@@ -17,12 +18,15 @@
     LBTodayViewController *todayVC = [[LBTodayViewController alloc] init];
     UINavigationController *todayNC = [[UINavigationController alloc] initWithRootViewController:todayVC];
     
+    LBGenresSelectViewController *genresVC = [[LBGenresSelectViewController alloc] init];
+    UINavigationController *genresNC = [[UINavigationController alloc] initWithRootViewController:genresVC];
+    
     todayNC.tabBarItem = [[UITabBarItem alloc]
                                      initWithTitle:@"Today"
                                      image:[UIImage imageNamed:@"65-note.png"]
                                      tag:0];
     
-    [tabBarController setViewControllers:[NSArray arrayWithObjects:todayNC, nil]];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:todayNC, genresNC, nil]];
     
     if([CLLocationManager locationServicesEnabled])
     {

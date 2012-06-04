@@ -10,6 +10,7 @@
 #import "LBGenreColours.h"
 #import "LBVenueBadge.h"
 #import "LBEventViewController.h"
+#import "LBCustomAccessory.h"
 
 @interface LBTodayViewController ()
 
@@ -97,6 +98,8 @@
 
     }
     
+    LBCustomAccessory *accessory = [LBCustomAccessory accessoryWithColor:[UIColor whiteColor]];
+    [cell setAccessoryView:accessory];
     
     LBVenueBadge *venueBadge = (LBVenueBadge *) [cell.contentView viewWithTag:300];
     [[venueBadge label]setText:[[[todayCollection events]objectAtIndex:indexPath.row]genre]];

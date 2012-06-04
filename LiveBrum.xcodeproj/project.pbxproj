@@ -52,6 +52,9 @@
 		50610F611577DE5900E563C8 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50610F571577DE5900E563C8 /* CJSONSerializer.m */; };
 		50959183157CE8B9005A6CBD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 50959182157CE8B9005A6CBD /* background.png */; };
 		50959186157CE8C2005A6CBD /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50959185157CE8C2005A6CBD /* background@2x.png */; };
+		5095918F157CEC56005A6CBD /* LBGenresSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5095918D157CEC56005A6CBD /* LBGenresSelectViewController.m */; };
+		50959190157CEC56005A6CBD /* LBGenresSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5095918E157CEC56005A6CBD /* LBGenresSelectViewController.xib */; };
+		50959193157D0CE2005A6CBD /* LBCustomAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 50959192157D0CE2005A6CBD /* LBCustomAccessory.m */; };
 		50A1E0571576314F00772484 /* LBGenreColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E0561576314F00772484 /* LBGenreColours.m */; };
 		50A1E05B157643ED00772484 /* LBVenueBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E05A157643ED00772484 /* LBVenueBadge.m */; };
 		50A1E05D1576472E00772484 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E05C1576472E00772484 /* QuartzCore.framework */; };
@@ -104,6 +107,11 @@
 		50610F581577DE5900E563C8 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		50959182157CE8B9005A6CBD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images/background.png; sourceTree = "<group>"; };
 		50959185157CE8C2005A6CBD /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Images/background@2x.png"; sourceTree = "<group>"; };
+		5095918C157CEC56005A6CBD /* LBGenresSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGenresSelectViewController.h; path = "LiveBrum/View Controllers/LBGenresSelectViewController.h"; sourceTree = "<group>"; };
+		5095918D157CEC56005A6CBD /* LBGenresSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGenresSelectViewController.m; path = "LiveBrum/View Controllers/LBGenresSelectViewController.m"; sourceTree = "<group>"; };
+		5095918E157CEC56005A6CBD /* LBGenresSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBGenresSelectViewController.xib; path = "LiveBrum/View Controllers/LBGenresSelectViewController.xib"; sourceTree = "<group>"; };
+		50959191157D0CE2005A6CBD /* LBCustomAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBCustomAccessory.h; path = LiveBrum/Helpers/LBCustomAccessory.h; sourceTree = "<group>"; };
+		50959192157D0CE2005A6CBD /* LBCustomAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBCustomAccessory.m; path = LiveBrum/Helpers/LBCustomAccessory.m; sourceTree = "<group>"; };
 		50A1E0551576314F00772484 /* LBGenreColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGenreColours.h; path = LiveBrum/Helpers/LBGenreColours.h; sourceTree = "<group>"; };
 		50A1E0561576314F00772484 /* LBGenreColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGenreColours.m; path = LiveBrum/Helpers/LBGenreColours.m; sourceTree = "<group>"; };
 		50A1E059157643ED00772484 /* LBVenueBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBVenueBadge.h; path = LiveBrum/Helpers/LBVenueBadge.h; sourceTree = "<group>"; };
@@ -194,6 +202,9 @@
 		504E403815754FC90049177A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5095918C157CEC56005A6CBD /* LBGenresSelectViewController.h */,
+				5095918D157CEC56005A6CBD /* LBGenresSelectViewController.m */,
+				5095918E157CEC56005A6CBD /* LBGenresSelectViewController.xib */,
 				504E403915754FEE0049177A /* LBTodayViewController.h */,
 				504E403A15754FEE0049177A /* LBTodayViewController.m */,
 				504E403B15754FEE0049177A /* LBTodayViewController.xib */,
@@ -264,6 +275,8 @@
 				50A1E05A157643ED00772484 /* LBVenueBadge.m */,
 				50A1E06915765C6A00772484 /* LBLoadingSpinner.h */,
 				50A1E06A15765C6A00772484 /* LBLoadingSpinner.m */,
+				50959191157D0CE2005A6CBD /* LBCustomAccessory.h */,
+				50959192157D0CE2005A6CBD /* LBCustomAccessory.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -434,6 +447,7 @@
 				50610F1B15776FED00E563C8 /* LBEventViewController.xib in Resources */,
 				50959183157CE8B9005A6CBD /* background.png in Resources */,
 				50959186157CE8C2005A6CBD /* background@2x.png in Resources */,
+				50959190157CEC56005A6CBD /* LBGenresSelectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +503,8 @@
 				50610F5F1577DE5900E563C8 /* CJSONDeserializer.m in Sources */,
 				50610F601577DE5900E563C8 /* CJSONScanner.m in Sources */,
 				50610F611577DE5900E563C8 /* CJSONSerializer.m in Sources */,
+				5095918F157CEC56005A6CBD /* LBGenresSelectViewController.m in Sources */,
+				50959193157D0CE2005A6CBD /* LBCustomAccessory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

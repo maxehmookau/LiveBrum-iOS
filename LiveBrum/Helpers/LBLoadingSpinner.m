@@ -35,6 +35,7 @@
         [indicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [indicator startAnimating];
         [innerSquare addSubview:indicator];
+        
     }
     return self;
 }
