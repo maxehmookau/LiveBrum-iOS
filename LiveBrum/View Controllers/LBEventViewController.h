@@ -12,6 +12,7 @@
 @interface LBEventViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     LBEvent *event;
+    IBOutlet UITableView *table;
 }
 -(id)initWithEvent:(LBEvent *)anEvent;
 

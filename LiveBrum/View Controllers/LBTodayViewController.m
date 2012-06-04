@@ -53,10 +53,15 @@
                 reuseIdentifier:CellIdentifier];        
         UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 40)];
         [headerLabel setFont:[UIFont boldSystemFontOfSize:22]];
+        [headerLabel setTextColor:[UIColor whiteColor]];
+        [headerLabel setBackgroundColor:[UIColor clearColor]];
+        [headerLabel setAdjustsFontSizeToFitWidth:YES];
         [headerLabel setTag:100];
         
         UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 20)];
         [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
+        [venueLabel setTextColor:[UIColor grayColor]];
+        [venueLabel setBackgroundColor:[UIColor clearColor]];
         [venueLabel setTag:200];
         
         
@@ -67,10 +72,14 @@
         
         UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 100, 15)];
         [distanceLabel setFont:[UIFont systemFontOfSize:12]];
+        [distanceLabel setBackgroundColor:[UIColor clearColor]];
+        [distanceLabel setTextColor:[UIColor whiteColor]];
         [distanceLabel setTag:500];
         
         UILabel *performanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 50, 15)];
         [performanceLabel setTag:600];
+        [performanceLabel setBackgroundColor:[UIColor clearColor]];
+        [performanceLabel setTextColor:[UIColor whiteColor]];
         [performanceLabel setFont:[UIFont boldSystemFontOfSize:12]];
         
         //LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
@@ -186,6 +195,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [table setBackgroundColor:[UIColor clearColor]];
     spinner = [[LBLoadingSpinner alloc] init];
     [self.view addSubview:spinner];
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0 alpha:1]];

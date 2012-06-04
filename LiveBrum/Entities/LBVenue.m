@@ -15,7 +15,7 @@
     
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
-    [locationManager startUpdatingLocation];
+    [locationManager startMonitoringSignificantLocationChanges];
     [locationManager setDistanceFilter:2000];
     distanceFromUser = [location distanceFromLocation:userLocation];
     
