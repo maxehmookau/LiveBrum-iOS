@@ -24,6 +24,6 @@
     UIActivityIndicatorView *activityIndicator;
 }
 
--(IBAction)backgroundButtonClicked:(id)sender;
 -(void)getPostcode;
+-(BOOL)validatePostcode:(NSString *)postcode;
 @end

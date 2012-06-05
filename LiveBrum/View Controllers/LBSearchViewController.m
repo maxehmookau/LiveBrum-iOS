@@ -43,6 +43,11 @@
     [locateButton setAlpha:1];
     [locateButton setEnabled:YES];
     [activityIndicator stopAnimating];
+    if(![self validatePostcode:[postcodeField text]])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?" message:@"That's not a Birmingham postcode, the results may be unusual." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
 
@@ -152,6 +157,14 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    if(textField == postcodeField)
+    {
+        if(![self validatePostcode:[textField text]])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?" message:@"That's not a Birmingham postcode, the results may be unusual." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+            [alert show];
+        }
+    }
     return YES;
 }
 
@@ -163,6 +176,16 @@
     }else{
         [table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
+}
+
+#pragma mark - Validation
+-(BOOL)validatePostcode:(NSString *)postcode
+{
+    if ([[postcode substringToIndex:1]isEqualToString:@"B"])
+    {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - View Loading
