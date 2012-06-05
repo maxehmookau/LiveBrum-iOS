@@ -1,5 +1,5 @@
 //
-//  LBGenresSelectViewController.h
+//  LBGenreSelectionScrollView.h
 //  LiveBrum
 //
 //  Created by Max Woolf on 04/06/2012.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LBVenueBadge.h"
 
-@interface LBGenresSelectViewController : UIViewController
+@interface LBGenreSelectionScrollView : UIView
 
 @end

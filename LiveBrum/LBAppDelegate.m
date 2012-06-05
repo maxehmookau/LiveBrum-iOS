@@ -1,6 +1,7 @@
 #import "LBAppDelegate.h"
 #import "LBTodayViewController.h"
 #import "LBGenresSelectViewController.h"
+#import "LBSearchViewController.h"
 
 @implementation LBAppDelegate
 
@@ -21,12 +22,20 @@
     LBGenresSelectViewController *genresVC = [[LBGenresSelectViewController alloc] init];
     UINavigationController *genresNC = [[UINavigationController alloc] initWithRootViewController:genresVC];
     
+    LBSearchViewController *searchVC = [[LBSearchViewController alloc] init];
+    UINavigationController *searchNC = [[UINavigationController alloc] initWithRootViewController:searchVC];
+    
     todayNC.tabBarItem = [[UITabBarItem alloc]
                                      initWithTitle:@"Today"
                                      image:[UIImage imageNamed:@"65-note.png"]
                                      tag:0];
     
-    [tabBarController setViewControllers:[NSArray arrayWithObjects:todayNC, genresNC, nil]];
+    searchNC.tabBarItem = [[UITabBarItem alloc]
+                          initWithTitle:@"Search"
+                          image:[UIImage imageNamed:@"06-magnify.png"]
+                          tag:0];
+    
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:todayNC, genresNC, searchNC, nil]];
     
     if([CLLocationManager locationServicesEnabled])
     {

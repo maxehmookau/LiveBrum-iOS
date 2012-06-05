@@ -9,20 +9,25 @@
 {
     name = aName;
     description = aDescription;
+    if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus])
+    {
+        //Hard coded with somewhere in devon for now... we'll fix it later.
+        location = [[CLLocation alloc] initWithLatitude:52.4240325 longitude:-1.9291173999999955];
+        locationManager = [[CLLocationManager alloc] init];
+        [locationManager setDelegate:self];
+        [locationManager startMonitoringSignificantLocationChanges];
+        [locationManager setDistanceFilter:2000];
+        distanceFromUser = [location distanceFromLocation:userLocation];
+        
+        mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 300, 199)];
+        [mapView setMapType:MKMapTypeStandard];
+        [mapView.layer setCornerRadius:10];
+        [mapView.layer setMasksToBounds:YES];
+    }else{
+        distanceString = @"?";
+        [delegate userMoved];
+    }
     
-    //Hard coded with somewhere in devon for now... we'll fix it later.
-    location = [[CLLocation alloc] initWithLatitude:52.4240325 longitude:-1.9291173999999955];
-    
-    locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDelegate:self];
-    [locationManager startMonitoringSignificantLocationChanges];
-    [locationManager setDistanceFilter:2000];
-    distanceFromUser = [location distanceFromLocation:userLocation];
-    
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 300, 199)];
-    [mapView setMapType:MKMapTypeStandard];
-    [mapView.layer setCornerRadius:10];
-    [mapView.layer setMasksToBounds:YES];
  
     [mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.4240325, -1.9291173999999955), MKCoordinateSpanMake(0.001, 0.006))animated:YES];
     

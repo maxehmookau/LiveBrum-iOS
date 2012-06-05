@@ -61,7 +61,7 @@
         
         UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, 300, 20)];
         [venueLabel setFont:[UIFont italicSystemFontOfSize:16]];
-        [venueLabel setTextColor:[UIColor grayColor]];
+        [venueLabel setTextColor:[UIColor whiteColor]];
         [venueLabel setBackgroundColor:[UIColor clearColor]];
         [venueLabel setTag:200];
         
@@ -141,6 +141,7 @@
 {
     return 100;
 }
+
 
 
 #pragma mark - Initialisation

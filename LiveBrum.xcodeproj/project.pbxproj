@@ -38,6 +38,9 @@
 		504E403D15754FEE0049177A /* LBTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504E403B15754FEE0049177A /* LBTodayViewController.xib */; };
 		50552E6E1576B390004B2E99 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50552E6D1576B390004B2E99 /* icon.png */; };
 		50552E701576B394004B2E99 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50552E6F1576B394004B2E99 /* icon@2x.png */; };
+		505F1186157E5E400063CEA1 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F1184157E5E400063CEA1 /* 74-location.png */; };
+		505F1187157E5E400063CEA1 /* 74-location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F1185157E5E400063CEA1 /* 74-location@2x.png */; };
+		505F118A157E810E0063CEA1 /* LBGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F1189157E810E0063CEA1 /* LBGeocoder.m */; };
 		50610F1A15776FED00E563C8 /* LBEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50610F1815776FED00E563C8 /* LBEventViewController.m */; };
 		50610F1B15776FED00E563C8 /* LBEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50610F1915776FED00E563C8 /* LBEventViewController.xib */; };
 		50610F1E1577A73400E563C8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50610F1D1577A73400E563C8 /* MapKit.framework */; };
@@ -55,6 +58,11 @@
 		5095918F157CEC56005A6CBD /* LBGenresSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5095918D157CEC56005A6CBD /* LBGenresSelectViewController.m */; };
 		50959190157CEC56005A6CBD /* LBGenresSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5095918E157CEC56005A6CBD /* LBGenresSelectViewController.xib */; };
 		50959193157D0CE2005A6CBD /* LBCustomAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 50959192157D0CE2005A6CBD /* LBCustomAccessory.m */; };
+		5095919A157D1038005A6CBD /* LBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50959198157D1038005A6CBD /* LBSearchViewController.m */; };
+		5095919B157D1038005A6CBD /* LBSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50959199157D1038005A6CBD /* LBSearchViewController.xib */; };
+		5095919F157D10B0005A6CBD /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095919D157D10B0005A6CBD /* 06-magnify.png */; };
+		509591A0157D10B0005A6CBD /* 06-magnify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095919E157D10B0005A6CBD /* 06-magnify@2x.png */; };
+		509591A3157D1704005A6CBD /* LBGenreSelectionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 509591A2157D1704005A6CBD /* LBGenreSelectionScrollView.m */; };
 		50A1E0571576314F00772484 /* LBGenreColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E0561576314F00772484 /* LBGenreColours.m */; };
 		50A1E05B157643ED00772484 /* LBVenueBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E05A157643ED00772484 /* LBVenueBadge.m */; };
 		50A1E05D1576472E00772484 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E05C1576472E00772484 /* QuartzCore.framework */; };
@@ -82,6 +90,10 @@
 		504E403B15754FEE0049177A /* LBTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBTodayViewController.xib; path = "LiveBrum/View Controllers/LBTodayViewController.xib"; sourceTree = "<group>"; };
 		50552E6D1576B390004B2E99 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		50552E6F1576B394004B2E99 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		505F1184157E5E400063CEA1 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
+		505F1185157E5E400063CEA1 /* 74-location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location@2x.png"; sourceTree = "<group>"; };
+		505F1188157E810E0063CEA1 /* LBGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGeocoder.h; path = LiveBrum/Helpers/LBGeocoder.h; sourceTree = "<group>"; };
+		505F1189157E810E0063CEA1 /* LBGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGeocoder.m; path = LiveBrum/Helpers/LBGeocoder.m; sourceTree = "<group>"; };
 		50610F1715776FED00E563C8 /* LBEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBEventViewController.h; path = "LiveBrum/View Controllers/LBEventViewController.h"; sourceTree = "<group>"; };
 		50610F1815776FED00E563C8 /* LBEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBEventViewController.m; path = "LiveBrum/View Controllers/LBEventViewController.m"; sourceTree = "<group>"; };
 		50610F1915776FED00E563C8 /* LBEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBEventViewController.xib; path = "LiveBrum/View Controllers/LBEventViewController.xib"; sourceTree = "<group>"; };
@@ -112,6 +124,13 @@
 		5095918E157CEC56005A6CBD /* LBGenresSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBGenresSelectViewController.xib; path = "LiveBrum/View Controllers/LBGenresSelectViewController.xib"; sourceTree = "<group>"; };
 		50959191157D0CE2005A6CBD /* LBCustomAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBCustomAccessory.h; path = LiveBrum/Helpers/LBCustomAccessory.h; sourceTree = "<group>"; };
 		50959192157D0CE2005A6CBD /* LBCustomAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBCustomAccessory.m; path = LiveBrum/Helpers/LBCustomAccessory.m; sourceTree = "<group>"; };
+		50959197157D1038005A6CBD /* LBSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBSearchViewController.h; path = "LiveBrum/View Controllers/LBSearchViewController.h"; sourceTree = "<group>"; };
+		50959198157D1038005A6CBD /* LBSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBSearchViewController.m; path = "LiveBrum/View Controllers/LBSearchViewController.m"; sourceTree = "<group>"; };
+		50959199157D1038005A6CBD /* LBSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBSearchViewController.xib; path = "LiveBrum/View Controllers/LBSearchViewController.xib"; sourceTree = "<group>"; };
+		5095919D157D10B0005A6CBD /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
+		5095919E157D10B0005A6CBD /* 06-magnify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify@2x.png"; sourceTree = "<group>"; };
+		509591A1157D1704005A6CBD /* LBGenreSelectionScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGenreSelectionScrollView.h; path = LiveBrum/Helpers/LBGenreSelectionScrollView.h; sourceTree = "<group>"; };
+		509591A2157D1704005A6CBD /* LBGenreSelectionScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGenreSelectionScrollView.m; path = LiveBrum/Helpers/LBGenreSelectionScrollView.m; sourceTree = "<group>"; };
 		50A1E0551576314F00772484 /* LBGenreColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGenreColours.h; path = LiveBrum/Helpers/LBGenreColours.h; sourceTree = "<group>"; };
 		50A1E0561576314F00772484 /* LBGenreColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGenreColours.m; path = LiveBrum/Helpers/LBGenreColours.m; sourceTree = "<group>"; };
 		50A1E059157643ED00772484 /* LBVenueBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBVenueBadge.h; path = LiveBrum/Helpers/LBVenueBadge.h; sourceTree = "<group>"; };
@@ -187,6 +206,10 @@
 		501C04DE1575522400609760 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				505F1184157E5E400063CEA1 /* 74-location.png */,
+				505F1185157E5E400063CEA1 /* 74-location@2x.png */,
+				5095919D157D10B0005A6CBD /* 06-magnify.png */,
+				5095919E157D10B0005A6CBD /* 06-magnify@2x.png */,
 				50959182157CE8B9005A6CBD /* background.png */,
 				50959185157CE8C2005A6CBD /* background@2x.png */,
 				50552E6F1576B394004B2E99 /* icon@2x.png */,
@@ -202,15 +225,10 @@
 		504E403815754FC90049177A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5095918C157CEC56005A6CBD /* LBGenresSelectViewController.h */,
-				5095918D157CEC56005A6CBD /* LBGenresSelectViewController.m */,
-				5095918E157CEC56005A6CBD /* LBGenresSelectViewController.xib */,
-				504E403915754FEE0049177A /* LBTodayViewController.h */,
-				504E403A15754FEE0049177A /* LBTodayViewController.m */,
-				504E403B15754FEE0049177A /* LBTodayViewController.xib */,
-				50610F1715776FED00E563C8 /* LBEventViewController.h */,
-				50610F1815776FED00E563C8 /* LBEventViewController.m */,
-				50610F1915776FED00E563C8 /* LBEventViewController.xib */,
+				50959194157D100C005A6CBD /* Genres */,
+				50959195157D1014005A6CBD /* Today */,
+				50959196157D101E005A6CBD /* Event */,
+				5095919C157D1056005A6CBD /* Search */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -266,9 +284,51 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		50959194157D100C005A6CBD /* Genres */ = {
+			isa = PBXGroup;
+			children = (
+				5095918C157CEC56005A6CBD /* LBGenresSelectViewController.h */,
+				5095918D157CEC56005A6CBD /* LBGenresSelectViewController.m */,
+				5095918E157CEC56005A6CBD /* LBGenresSelectViewController.xib */,
+			);
+			name = Genres;
+			sourceTree = "<group>";
+		};
+		50959195157D1014005A6CBD /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				504E403915754FEE0049177A /* LBTodayViewController.h */,
+				504E403A15754FEE0049177A /* LBTodayViewController.m */,
+				504E403B15754FEE0049177A /* LBTodayViewController.xib */,
+			);
+			name = Today;
+			sourceTree = "<group>";
+		};
+		50959196157D101E005A6CBD /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				50610F1715776FED00E563C8 /* LBEventViewController.h */,
+				50610F1815776FED00E563C8 /* LBEventViewController.m */,
+				50610F1915776FED00E563C8 /* LBEventViewController.xib */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		5095919C157D1056005A6CBD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				50959197157D1038005A6CBD /* LBSearchViewController.h */,
+				50959198157D1038005A6CBD /* LBSearchViewController.m */,
+				50959199157D1038005A6CBD /* LBSearchViewController.xib */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		50A1E0581576315200772484 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				505F1188157E810E0063CEA1 /* LBGeocoder.h */,
+				505F1189157E810E0063CEA1 /* LBGeocoder.m */,
 				50A1E0551576314F00772484 /* LBGenreColours.h */,
 				50A1E0561576314F00772484 /* LBGenreColours.m */,
 				50A1E059157643ED00772484 /* LBVenueBadge.h */,
@@ -277,6 +337,8 @@
 				50A1E06A15765C6A00772484 /* LBLoadingSpinner.m */,
 				50959191157D0CE2005A6CBD /* LBCustomAccessory.h */,
 				50959192157D0CE2005A6CBD /* LBCustomAccessory.m */,
+				509591A1157D1704005A6CBD /* LBGenreSelectionScrollView.h */,
+				509591A2157D1704005A6CBD /* LBGenreSelectionScrollView.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -448,6 +510,11 @@
 				50959183157CE8B9005A6CBD /* background.png in Resources */,
 				50959186157CE8C2005A6CBD /* background@2x.png in Resources */,
 				50959190157CEC56005A6CBD /* LBGenresSelectViewController.xib in Resources */,
+				5095919B157D1038005A6CBD /* LBSearchViewController.xib in Resources */,
+				5095919F157D10B0005A6CBD /* 06-magnify.png in Resources */,
+				509591A0157D10B0005A6CBD /* 06-magnify@2x.png in Resources */,
+				505F1186157E5E400063CEA1 /* 74-location.png in Resources */,
+				505F1187157E5E400063CEA1 /* 74-location@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +572,9 @@
 				50610F611577DE5900E563C8 /* CJSONSerializer.m in Sources */,
 				5095918F157CEC56005A6CBD /* LBGenresSelectViewController.m in Sources */,
 				50959193157D0CE2005A6CBD /* LBCustomAccessory.m in Sources */,
+				5095919A157D1038005A6CBD /* LBSearchViewController.m in Sources */,
+				509591A3157D1704005A6CBD /* LBGenreSelectionScrollView.m in Sources */,
+				505F118A157E810E0063CEA1 /* LBGeocoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
