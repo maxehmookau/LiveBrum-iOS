@@ -11,8 +11,11 @@
 @interface LBVenueBadge : UIView
 {
     UILabel *label;
+    UIFont *font;
 }
--(id)initWithGenre:(NSString *)genre frame:(CGRect)frame;
+- (id)initWithFrame:(CGRect)frame font:(UIFont *)aFont;
+-(id)initWithGenre:(NSString *)genre frame:(CGRect)frame font:(UIFont *)aFont;
 
 @property (nonatomic) UILabel *label;
+@property (nonatomic) UIFont *font;
 @end

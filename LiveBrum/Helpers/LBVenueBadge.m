@@ -11,15 +11,15 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation LBVenueBadge
-@synthesize label;
-- (id)initWithFrame:(CGRect)frame
+@synthesize label, font;
+- (id)initWithFrame:(CGRect)frame font:(UIFont *)aFont;
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
         label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
-        [label setFont:[UIFont systemFontOfSize:13]];
+        [label setFont:aFont];
         [label setTextColor:[UIColor colorWithWhite:9 alpha:1]];
         [label setTextAlignment:UITextAlignmentCenter];
         float viewWidth = self.frame.size.width;
@@ -36,14 +36,14 @@
     return self;
 }
 
--(id)initWithGenre:(NSString *)genre frame:(CGRect)frame
+-(id)initWithGenre:(NSString *)genre frame:(CGRect)frame font:(UIFont *)aFont
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
-        [label setFont:[UIFont systemFontOfSize:13]];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+        [label setFont:aFont];
         [label setTextColor:[UIColor colorWithWhite:9 alpha:1]];
         [label setTextAlignment:UITextAlignmentCenter];
         [label setText:genre];

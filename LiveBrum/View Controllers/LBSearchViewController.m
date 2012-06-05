@@ -9,6 +9,8 @@
 #import "LBSearchViewController.h"
 #import "LBVenueBadge.h"
 #import <QuartzCore/QuartzCore.h>
+#import "LBGenreColours.h"
+#import "LBGenrePicker.h"
 
 @interface LBSearchViewController ()
 
@@ -136,6 +138,18 @@
             [cell.contentView addSubview:activityIndicator];
         }
         
+    }else if(indexPath.section == 2)
+    {
+        [cell setBackgroundColor:[UIColor clearColor]];
+        genreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+        [genreLabel setText:@"Genre"];
+        [genreLabel setBackgroundColor:[UIColor clearColor]];
+        [genreLabel setTextAlignment:UITextAlignmentCenter];
+        [genreLabel setTextColor:[UIColor whiteColor]];
+        [genreLabel setFont:[UIFont systemFontOfSize:22]];
+        [cell.contentView addSubview:genreLabel];
+        [cell setBackgroundColor:[LBGenreColours colorForGenre:@"Spoken Word"]];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
     
     return cell;
@@ -151,6 +165,22 @@
         return 100;
     }
     return 44;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 2)
+    {
+        [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.2];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+            
+        [genrePicker setFrame:CGRectMake(0, 190, 320, 180)];
+        
+        [UIView commitAnimations];
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - First Responding
@@ -177,6 +207,92 @@
         [table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
 }
+#pragma mark - Picker
+-(void)pickerTapped:(UIGestureRecognizer *)gestureRecognizer {
+    //determine location of tap inside UIPickerView
+    CGPoint myP = [gestureRecognizer locationInView:genrePicker];
+    //find height of single UIPickerRow (5 equal rows)
+    CGFloat heightOfPickerRow = genrePicker.frame.size.height/5;
+    //declare variable to store selected row
+    NSInteger rowToSelect =[genrePicker selectedRowInComponent:0];
+    //Analyse if any action on the tap is required
+    if (myP.y<heightOfPickerRow) {
+        //selected area corresponds to current_row-2 row
+        //check if we can move to that row (i.e. that
+        //it exists and is not blank
+        if ([genrePicker selectedRowInComponent:0] > 1)
+            rowToSelect -=2;
+        else
+            rowToSelect = -1; //no action required code
+    }
+    else if (myP.y<2*heightOfPickerRow) {
+        //selected area corresponds to current_row-1 row
+        //check if we can move to that row (i.e. that
+        //it exists and is not blank
+        if ([genrePicker selectedRowInComponent:0] > 0)
+            rowToSelect -=1;
+        else
+            rowToSelect = -1; //no action required code
+    }
+    else if (myP.y<3*heightOfPickerRow) {
+        //selected the already highlighted row.
+        //it definitely exists so no further checks needed
+        rowToSelect = [genrePicker selectedRowInComponent:0];
+    }
+    else if (myP.y<4*heightOfPickerRow) {
+        //selected area corresponds to current_row+1 row
+        //check if we can move to that row (i.e. that
+        //it exists and is not blank
+        if ([genrePicker selectedRowInComponent:0] <
+            ([genrePicker numberOfRowsInComponent:0]-1))
+            rowToSelect +=1;
+        else
+            rowToSelect = -1; //no action required code
+    }
+    else {
+        //selected area corresponds to current_row+2 row
+        //check if we can move to that row (i.e. that
+        //it exists and is not blank
+        if ([genrePicker selectedRowInComponent:0] <
+            ([genrePicker numberOfRowsInComponent:0]-2))
+            rowToSelect +=2;
+        else
+            rowToSelect = -1; //no action required code
+    }
+    //check that we do need to process the tap
+    if (rowToSelect!=-1) {
+        //tell picker view to scroll to required row
+        //ATTENTION - didSelectRow method is not called when you
+        //tell the picker to move to select some row
+        [genrePicker selectRow:rowToSelect inComponent:0 animated:YES];
+        //hence we need another function
+        [self customPickerView:genrePicker didSelectRow:rowToSelect inComponent:0
+                 asResultOfTap:YES];
+    }
+}
+
+-(void)customPickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+            inComponent:(NSInteger)component  asResultOfTap:(bool)userTapped{
+    //We will hide the picker when userTapped and currently stored selectedRow
+    //is equal to the one that use selected just now
+    bool needsHiding = userTapped && ([pickerView selectedRowInComponent:0] == row);
+    
+    if (!needsHiding) {
+        NSLog(@"%i", row);
+    }
+    else{
+        [genreLabel setText:[[LBGenrePicker genres]objectAtIndex:[pickerView selectedRowInComponent:0]]];
+        [[table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]]setBackgroundColor:[LBGenreColours colorForGenre:[[LBGenrePicker genres]objectAtIndex:[pickerView selectedRowInComponent:0]]]];
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.2];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        
+        [genrePicker setFrame:CGRectMake(0, 370, 320, 180)];
+        
+        [UIView commitAnimations];
+
+    }
+}
 
 #pragma mark - Validation
 -(BOOL)validatePostcode:(NSString *)postcode
@@ -195,6 +311,12 @@
     // Do any additional setup after loading the view from its nib.
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0 alpha:1]];
     [self setTitle:@"Search"];
+    genrePicker = [[LBGenrePicker alloc] initWithFrame:CGRectMake(0, 370, 320, 180)];
+    [self.view addSubview:genrePicker];
+    UITapGestureRecognizer *tapgesture = [[UITapGestureRecognizer alloc] 
+                                          initWithTarget:self
+                                          action:@selector(pickerTapped:)];
+    [genrePicker addGestureRecognizer:tapgesture];
 
 }
 

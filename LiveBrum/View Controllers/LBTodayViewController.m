@@ -84,7 +84,7 @@
         [performanceLabel setFont:[UIFont boldSystemFontOfSize:12]];
         
         //LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithGenre:[[[todayCollection events]objectAtIndex:indexPath.row]genre] frame:CGRectMake(85, 73, 100, 20)];
-        LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithFrame:CGRectMake(85, 73, 100, 20)];
+        LBVenueBadge *venueBadge = [[LBVenueBadge alloc] initWithFrame:CGRectMake(85, 73, 100, 20) font:[UIFont systemFontOfSize:13]];
         [venueBadge setTag:300];
         
 

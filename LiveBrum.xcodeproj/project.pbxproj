@@ -41,6 +41,7 @@
 		505F1186157E5E400063CEA1 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F1184157E5E400063CEA1 /* 74-location.png */; };
 		505F1187157E5E400063CEA1 /* 74-location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F1185157E5E400063CEA1 /* 74-location@2x.png */; };
 		505F118A157E810E0063CEA1 /* LBGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F1189157E810E0063CEA1 /* LBGeocoder.m */; };
+		505F118D157EA10A0063CEA1 /* LBGenrePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F118C157EA10A0063CEA1 /* LBGenrePicker.m */; };
 		50610F1A15776FED00E563C8 /* LBEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50610F1815776FED00E563C8 /* LBEventViewController.m */; };
 		50610F1B15776FED00E563C8 /* LBEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50610F1915776FED00E563C8 /* LBEventViewController.xib */; };
 		50610F1E1577A73400E563C8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50610F1D1577A73400E563C8 /* MapKit.framework */; };
@@ -94,6 +95,8 @@
 		505F1185157E5E400063CEA1 /* 74-location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location@2x.png"; sourceTree = "<group>"; };
 		505F1188157E810E0063CEA1 /* LBGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBGeocoder.h; path = LiveBrum/Helpers/LBGeocoder.h; sourceTree = "<group>"; };
 		505F1189157E810E0063CEA1 /* LBGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBGeocoder.m; path = LiveBrum/Helpers/LBGeocoder.m; sourceTree = "<group>"; };
+		505F118B157EA10A0063CEA1 /* LBGenrePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGenrePicker.h; sourceTree = "<group>"; };
+		505F118C157EA10A0063CEA1 /* LBGenrePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGenrePicker.m; sourceTree = "<group>"; };
 		50610F1715776FED00E563C8 /* LBEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBEventViewController.h; path = "LiveBrum/View Controllers/LBEventViewController.h"; sourceTree = "<group>"; };
 		50610F1815776FED00E563C8 /* LBEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBEventViewController.m; path = "LiveBrum/View Controllers/LBEventViewController.m"; sourceTree = "<group>"; };
 		50610F1915776FED00E563C8 /* LBEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBEventViewController.xib; path = "LiveBrum/View Controllers/LBEventViewController.xib"; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				50959192157D0CE2005A6CBD /* LBCustomAccessory.m */,
 				509591A1157D1704005A6CBD /* LBGenreSelectionScrollView.h */,
 				509591A2157D1704005A6CBD /* LBGenreSelectionScrollView.m */,
+				505F118B157EA10A0063CEA1 /* LBGenrePicker.h */,
+				505F118C157EA10A0063CEA1 /* LBGenrePicker.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -575,6 +580,7 @@
 				5095919A157D1038005A6CBD /* LBSearchViewController.m in Sources */,
 				509591A3157D1704005A6CBD /* LBGenreSelectionScrollView.m in Sources */,
 				505F118A157E810E0063CEA1 /* LBGeocoder.m in Sources */,
+				505F118D157EA10A0063CEA1 /* LBGenrePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
